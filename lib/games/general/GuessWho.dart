@@ -28,6 +28,7 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
   Color _color = Colors.blue;
   bool _waiting = true;
   int _points = 0;
+  bool _started = false;
 
   StreamSubscription<dynamic> _streamSubscriptions;
 
@@ -50,11 +51,11 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
     WidgetsBinding.instance.addObserver(this);
 
     start();
-    Future.delayed(
-        const Duration(seconds: 3),
-            () => setState(() {
-          _waiting = false;
-        }));
+//    Future.delayed(
+//        const Duration(seconds: 3),
+//            () => setState(() {
+//          _waiting = false;
+//        }));
   }
 
   start(){
@@ -79,7 +80,7 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
         child: Scaffold(
           body: Container(
             color: _color,
-            child: Column(
+            child: _started ? Column(
               children: [
                 Row(
                   children: [
@@ -96,7 +97,7 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: CostumTimer(
-                        time: 13,
+                        time: 60,
                         onExpire: () => _finish(),
                         style: TextStyle(fontSize: 40),),
                     ),
@@ -112,6 +113,17 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
                   ),
                 ),
               ],
+            ) : Expanded(
+              child: Center(
+                child: CostumTimer(
+                  time: 3,
+                  style: TextStyle(fontSize: 120),
+                  onExpire: () => setState(() {
+                    _started = true;
+                    _waiting = false;
+                  }),
+                ),
+              ),
             ),
           ),
         ));
