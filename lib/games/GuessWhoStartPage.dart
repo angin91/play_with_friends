@@ -27,9 +27,11 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
   };
   String _dropdownTextCategories;
   String _url;
-  List<int> _numberTeams = [1,2,3,4];
-  int _dropdownTeams;
-  int _points = 0;
+  int _teamPlaying;
+  int _teamOnePoints = 0;
+  int _teamTwoPoints = 0;
+  int _teamThreePoints = 0;
+  int _teamFourPoints = 0;
 
   @override
   void initState() {
@@ -39,89 +41,143 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
 
   @override
   Widget build(BuildContext context) {
+    final _scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
+        key: _scaffoldKey,
         appBar: AppBar(
           title: Text("Guess Who"),
         ),
         body: Column(
           children: [
-            Row(
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: DropdownButton<String>(
-                      hint: Text("Select category"),
-                      items: _categories.map((description, value) {
-                        return MapEntry(
-                            description,
-                            DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(description),
-                            ));
-                      }).values.toList(),
-                      value: _dropdownTextCategories,
-                      onChanged: (newValue) {
-                        setState(() {
-                          _dropdownTextCategories = newValue;
-                          _url = newValue;
-                        });
-                      },
-                    ),
-                  ),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: DropdownButton<String>(
+                  hint: Text("Select category"),
+                  items: _categories.map((description, value) {
+                    return MapEntry(
+                        description,
+                        DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(description),
+                        ));
+                  }).values.toList(),
+                  value: _dropdownTextCategories,
+                  onChanged: (newValue) {
+                    setState(() {
+                      _dropdownTextCategories = newValue;
+                      _url = newValue;
+                    });
+                  },
                 ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: DropdownButton<int>(
-                      hint: Text("No of teams"),
-                      value: _dropdownTeams,
-                      items: _numberTeams.map((value) {
-                        return DropdownMenuItem<int>(
-                              value: value,
-                              child: Text(value.toString()),
-                            );
-                      }).toList(),
-                      onChanged: (newValue) {
-                        setState(() {
-                          _dropdownTeams = newValue;
-                        });
-                      },
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
-            Text(_points.toString()),
-            Spacer(),
-            Row(
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: CustomButton(
-                      text: "Start",
-                      onTap: () => start(_url),
+            Expanded(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GestureDetector(
+                        onTap: () => start(1, _url, _scaffoldKey),
+                        child: Container(
+                            color: Colors.blue,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Team 1"),
+                                Text(_teamOnePoints.toString(), style: TextStyle(fontSize: 40),),
+                              ],
+                            )
+                        ),
+                      ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: CustomButton(
-                      text: "Rules",
-                      onTap: () => getRule("resource/rules/guess_who_rules"),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GestureDetector(
+                        onTap: () => start(2, _url, _scaffoldKey),
+                        child: Container(
+                            color: Colors.green,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Team 2"),
+                                Text(_teamTwoPoints.toString(), style: TextStyle(fontSize: 40),),
+                              ],
+                            )
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
+            ),
+            Expanded(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GestureDetector(
+                        onTap: () => start(3, _url, _scaffoldKey),
+                        child: Container(
+                            color: Colors.orange,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Team 3"),
+                                Text(_teamThreePoints.toString(), style: TextStyle(fontSize: 40),),
+                              ],
+                            )
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GestureDetector(
+                        onTap: () => start(4, _url, _scaffoldKey),
+                        child: Container(
+                            color: Colors.teal,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Team 4"),
+                                Text(_teamFourPoints.toString(), style: TextStyle(fontSize: 40),),
+                              ],
+                            )
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomButton(
+                text: "Rules",
+                onTap: () => getRule("resource/rules/guess_who_rules"),
+              ),
             ),
           ],
         )
     );
   }
 
-  void start(String url) async {
+  void start(int team, String url, _scaffoldKey) async {
+    _teamPlaying = team;
+    if(_dropdownTextCategories == null || _dropdownTextCategories.isEmpty){
+      final snackBar = SnackBar(
+        content: Text('You need to choose a category!'),
+        backgroundColor: Colors.red,);
+      _scaffoldKey.currentState.showSnackBar(snackBar);
+      return;
+    }
+
     var data = "";
     var listOfItems;
     if(url.contains("all")){
@@ -135,7 +191,10 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
 
     final result = await Navigator.push(context, MaterialPageRoute(builder: (context) => GuessWho(list: listOfItems,)),);
     setState(() {
-      _points = result[1];
+      if(_teamPlaying == 1){_teamOnePoints += result[1];}
+      if(_teamPlaying == 2){_teamTwoPoints += result[1];}
+      if(_teamPlaying == 3){_teamThreePoints += result[1];}
+      if(_teamPlaying == 4){_teamFourPoints += result[1];}
     });
   }
 

@@ -96,7 +96,7 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: CostumTimer(
-                        time: 63,
+                        time: 13,
                         onExpire: () => _finish(),
                         style: TextStyle(fontSize: 40),),
                     ),

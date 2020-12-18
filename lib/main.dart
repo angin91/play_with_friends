@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: SelectGamePage(title: 'Play With Friends'),
-//      home: GuessWhoStartPage(),
+//      home: SelectGamePage(title: 'Play With Friends'),
+      home: GuessWhoStartPage(),
     );
   }
 }
