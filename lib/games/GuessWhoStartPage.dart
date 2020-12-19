@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:play_with_friends/games/general/GuessWho.dart';
 import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/general/RulePage.dart';
 import 'package:play_with_friends/models/CostumButton.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Helper.dart';
 
@@ -23,7 +24,9 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
 //    "Gudar/mytologier": "resource/categories/gods",
     "Personer": "resource/categories/persons",
     "Sporter": "resource/categories/sports_swe",
-    "Ord": "resource/categories/words_swe"
+    "Ord": "resource/categories/words_swe",
+    "Marvel": "resource/categories/marvel",
+    "Yrken": "resource/categories/jobs_swe"
   };
   String _dropdownTextCategories;
   String _url;
@@ -37,7 +40,34 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
   void initState() {
     super.initState();
     helper = new Helper();
+    _loadPoints();
   }
+
+  _loadPoints()async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _teamOnePoints = (prefs.getInt('teamOnePoints') ?? 0);
+      _teamTwoPoints = (prefs.getInt('teamTwoPoints') ?? 0);
+      _teamThreePoints = (prefs.getInt('teamThreePoints') ?? 0);
+      _teamFourPoints = (prefs.getInt('teamFourPoints') ?? 0);
+    });
+  }
+
+
+  _resetPoints() async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      prefs.remove('teamOnePoints');
+      _teamOnePoints = 0;
+      prefs.remove('teamTwoPoints');
+      _teamTwoPoints = 0;
+      prefs.remove('teamThreePoints');
+      _teamThreePoints = 0;
+      prefs.remove('teamFourPoints');
+      _teamFourPoints = 0;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +76,14 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
         key: _scaffoldKey,
         appBar: AppBar(
           title: Text("Guess Who"),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.remove_circle),
+              onPressed: () {
+                _resetPoints();
+              },
+            )
+          ],
         ),
         body: Column(
           children: [
@@ -190,11 +228,25 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
     listOfItems = data.split("\n");
 
     final result = await Navigator.push(context, MaterialPageRoute(builder: (context) => GuessWho(list: listOfItems,)),);
+
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      if(_teamPlaying == 1){_teamOnePoints += result[1];}
-      if(_teamPlaying == 2){_teamTwoPoints += result[1];}
-      if(_teamPlaying == 3){_teamThreePoints += result[1];}
-      if(_teamPlaying == 4){_teamFourPoints += result[1];}
+      if(_teamPlaying == 1){
+        _teamOnePoints = (prefs.getInt('teamOnePoints') ?? 0) + result[1];
+        prefs.setInt('teamOnePoints', _teamOnePoints);
+      }
+      if(_teamPlaying == 2){
+        _teamTwoPoints = (prefs.getInt('teamTwoPoints') ?? 0) + result[1];
+        prefs.setInt('teamTwoPoints', _teamTwoPoints);
+      }
+      if(_teamPlaying == 3){
+        _teamThreePoints = (prefs.getInt('teamThreePoints') ?? 0) + result[1];
+        prefs.setInt('teamThreePoints', _teamThreePoints);
+      }
+      if(_teamPlaying == 4){
+        _teamFourPoints = (prefs.getInt('teamFourPoints') ?? 0) + result[1];
+        prefs.setInt('teamFourPoints', _teamFourPoints);
+      }
     });
   }
 

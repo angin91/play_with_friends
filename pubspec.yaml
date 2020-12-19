@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  shared_preferences: ^0.5.12+4
   path_provider: ^1.6.24
   fullscreen: ^1.0.1
   aeyrium_sensor: ^1.0.7
@@ -56,6 +57,8 @@ flutter:
     - resource/categories/gods
     - resource/categories/sports_swe
     - resource/categories/words_swe
+    - resource/categories/jobs_swe
+    - resource/categories/marvel
     - resource/rules/guess_who_rules
 
   # To add assets to your application, add an assets section, like this:
