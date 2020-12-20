@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:play_with_friends/games/GuessWhoStartPage.dart';
+import 'package:play_with_friends/games/SingALongStartPage.dart';
 import 'SelecteGamePage.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: SelectGamePage(title: 'Play With Friends'),
+//      home: SingALongStartPage(),
 //      home: GuessWhoStartPage(),
     );
   }

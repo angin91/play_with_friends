@@ -5,6 +5,8 @@ import 'package:play_with_friends/Helper.dart';
 import 'package:play_with_friends/games/CharadesStartPage.dart';
 import 'package:play_with_friends/models/CostumButton.dart';
 
+import 'games/SingALongStartPage.dart';
+
 class SelectGamePage extends StatefulWidget {
   SelectGamePage({Key key, this.title}) : super(key: key);
 
@@ -30,7 +32,8 @@ class _SelectGamePageState extends State<SelectGamePage> {
 
   Map games = {
     "Charades": CharadesStartPage(),
-    "Guess Who": GuessWhoStartPage()
+    "Guess Who": GuessWhoStartPage(),
+    "Sing-a-Long": SingALongStartPage()
   };
 
   @override
