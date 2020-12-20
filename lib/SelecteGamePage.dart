@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/GuessWhoStartPage.dart';
 import 'package:play_with_friends/Helper.dart';
 import 'package:play_with_friends/games/CharadesStartPage.dart';
 import 'package:play_with_friends/models/CostumButton.dart';
-
-import 'models/CostumTimer.dart';
 
 class SelectGamePage extends StatefulWidget {
   SelectGamePage({Key key, this.title}) : super(key: key);
@@ -17,6 +16,13 @@ class SelectGamePage extends StatefulWidget {
 
 class _SelectGamePageState extends State<SelectGamePage> {
   var helper;
+
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  }
 
   _SelectGamePageState() {
     helper = new Helper();
@@ -59,9 +65,5 @@ class _SelectGamePageState extends State<SelectGamePage> {
             ),
           ],
         ));
-  }
-
-  getJson(url) async {
-    String text = await helper.getFileData(url);
   }
 }

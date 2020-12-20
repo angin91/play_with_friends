@@ -51,11 +51,6 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
     WidgetsBinding.instance.addObserver(this);
 
     start();
-//    Future.delayed(
-//        const Duration(seconds: 3),
-//            () => setState(() {
-//          _waiting = false;
-//        }));
   }
 
   start(){

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:play_with_friends/games/general/GuessWho.dart';
 import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/general/RulePage.dart';
 import 'package:play_with_friends/models/CostumButton.dart';
@@ -31,6 +32,8 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
   @override
   void initState() {
     super.initState();
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     helper = new Helper();
     load = _loadLists();
     _loadPoints();
