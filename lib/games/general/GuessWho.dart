@@ -113,17 +113,21 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
                   ),
                 ),
               ],
-            ) : Expanded(
-              child: Center(
-                child: CostumTimer(
-                  time: 3,
-                  style: TextStyle(fontSize: 120),
-                  onExpire: () => setState(() {
-                    _started = true;
-                    _waiting = false;
-                  }),
+            ) : Row(
+              children: [
+                Expanded(
+                  child: Center(
+                    child: CostumTimer(
+                      time: 3,
+                      style: TextStyle(fontSize: 120),
+                      onExpire: () => setState(() {
+                        _started = true;
+                        _waiting = false;
+                      }),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
           ),
         ));

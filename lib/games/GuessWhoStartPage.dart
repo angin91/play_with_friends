@@ -17,29 +17,22 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
 
   Helper helper;
   String _ruleText = "";
-  final Map<String, String> _categories =  {
-    "Allt": "all",
-    "Disney": "resource/categories/disney_characters_swe",
-    "Länder": "resource/categories/countries_swe",
-//    "Gudar/mytologier": "resource/categories/gods",
-    "Personer": "resource/categories/persons",
-    "Sporter": "resource/categories/sports_swe",
-    "Ord": "resource/categories/words_swe",
-    "Marvel": "resource/categories/marvel",
-    "Yrken": "resource/categories/jobs_swe"
-  };
-  String _dropdownTextCategories;
+  final Map<String, List> _categories =  {};
+  String _categoryToPlay;
+  List _listToPlay;
   String _url;
   int _teamPlaying;
   int _teamOnePoints = 0;
   int _teamTwoPoints = 0;
   int _teamThreePoints = 0;
   int _teamFourPoints = 0;
+  Future load;
 
   @override
   void initState() {
     super.initState();
     helper = new Helper();
+    load = _loadLists();
     _loadPoints();
   }
 
@@ -53,6 +46,23 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
     });
   }
 
+  _loadLists() async {
+    _categories.clear();
+    var data = await helper.getFileData("resource/categories/disney_characters_swe");
+    _categories.putIfAbsent("Disney", () => data.split("\n"));
+    data = await helper.getFileData("resource/categories/countries_swe");
+    _categories.putIfAbsent("Länder", () => data.split("\n"));
+    data = await helper.getFileData("resource/categories/persons");
+    _categories.putIfAbsent("Personer", () => data.split("\n"));
+    data = await helper.getFileData("resource/categories/sports_swe");
+    _categories.putIfAbsent("Sporter", () => data.split("\n"));
+    data = await helper.getFileData("resource/categories/words_swe");
+    _categories.putIfAbsent("Ord", () => data.split("\n"));
+    data = await helper.getFileData("resource/categories/marvel");
+    _categories.putIfAbsent("Marvel", () => data.split("\n"));
+    data = await helper.getFileData("resource/categories/jobs_swe");
+    _categories.putIfAbsent("Yrken", () => data.split("\n"));
+  }
 
   _resetPoints() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -90,23 +100,27 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
             Center(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: DropdownButton<String>(
-                  hint: Text("Select category"),
-                  items: _categories.map((description, value) {
-                    return MapEntry(
-                        description,
-                        DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(description),
-                        ));
-                  }).values.toList(),
-                  value: _dropdownTextCategories,
-                  onChanged: (newValue) {
-                    setState(() {
-                      _dropdownTextCategories = newValue;
-                      _url = newValue;
-                    });
-                  },
+                child: FutureBuilder(
+                    future: load,
+                    builder: (BuildContext context, AsyncSnapshot snapshot) {
+                      return DropdownButton<List>(
+                        hint: Text("Select category"),
+                        items: _categories.map((description, value) {
+                          return MapEntry(
+                              description,
+                              DropdownMenuItem<List>(
+                                value: value,
+                                child: Text(description),
+                              ));
+                        }).values.toList(),
+                        value: _listToPlay,
+                        onChanged: (newValue) {
+                          setState(() {
+                            _listToPlay = newValue;
+                          });
+                        },
+                      );
+                    }
                 ),
               ),
             ),
@@ -208,46 +222,43 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
 
   void start(int team, String url, _scaffoldKey) async {
     _teamPlaying = team;
-    if(_dropdownTextCategories == null || _dropdownTextCategories.isEmpty){
+    if(_listToPlay == null || _listToPlay.isEmpty){
+      String text = "You need to choose a category!";
+      if(_listToPlay != null && _listToPlay.isEmpty){
+        text = "No more options in category. Please reset";
+      }
       final snackBar = SnackBar(
-        content: Text('You need to choose a category!'),
+        content: Text(text),
         backgroundColor: Colors.red,);
       _scaffoldKey.currentState.showSnackBar(snackBar);
       return;
     }
 
-    var data = "";
-    var listOfItems;
-    if(url.contains("all")){
-      for(var i = 1; i <= _categories.values.length - 1; i++){
-        data += await helper.getFileData(_categories.values.toList()[i]) + "\n";
-      }
-    }else {
-      data = await helper.getFileData(url);
+    final result = await Navigator.push(context, MaterialPageRoute(builder: (context) => GuessWho(list: _listToPlay,)),);
+
+    if(result != null){
+      var key = _categories.keys.firstWhere((element) => _categories[element] == _listToPlay, orElse: () => null);
+      _categories.update(key, (value) => result[0]);
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      setState(() {
+        if(_teamPlaying == 1){
+          _teamOnePoints = (prefs.getInt('teamOnePoints') ?? 0) + result[1];
+          prefs.setInt('teamOnePoints', _teamOnePoints);
+        }
+        if(_teamPlaying == 2){
+          _teamTwoPoints = (prefs.getInt('teamTwoPoints') ?? 0) + result[1];
+          prefs.setInt('teamTwoPoints', _teamTwoPoints);
+        }
+        if(_teamPlaying == 3){
+          _teamThreePoints = (prefs.getInt('teamThreePoints') ?? 0) + result[1];
+          prefs.setInt('teamThreePoints', _teamThreePoints);
+        }
+        if(_teamPlaying == 4){
+          _teamFourPoints = (prefs.getInt('teamFourPoints') ?? 0) + result[1];
+          prefs.setInt('teamFourPoints', _teamFourPoints);
+        }
+      });
     }
-    listOfItems = data.split("\n");
-
-    final result = await Navigator.push(context, MaterialPageRoute(builder: (context) => GuessWho(list: listOfItems,)),);
-
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      if(_teamPlaying == 1){
-        _teamOnePoints = (prefs.getInt('teamOnePoints') ?? 0) + result[1];
-        prefs.setInt('teamOnePoints', _teamOnePoints);
-      }
-      if(_teamPlaying == 2){
-        _teamTwoPoints = (prefs.getInt('teamTwoPoints') ?? 0) + result[1];
-        prefs.setInt('teamTwoPoints', _teamTwoPoints);
-      }
-      if(_teamPlaying == 3){
-        _teamThreePoints = (prefs.getInt('teamThreePoints') ?? 0) + result[1];
-        prefs.setInt('teamThreePoints', _teamThreePoints);
-      }
-      if(_teamPlaying == 4){
-        _teamFourPoints = (prefs.getInt('teamFourPoints') ?? 0) + result[1];
-        prefs.setInt('teamFourPoints', _teamFourPoints);
-      }
-    });
   }
 
   void getRule(url) async {
