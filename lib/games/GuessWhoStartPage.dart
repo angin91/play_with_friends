@@ -17,11 +17,8 @@ class GuessWhoStartPage extends StatefulWidget {
 class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
 
   Helper helper;
-  String _ruleText = "";
   final Map<String, List> _categories =  {};
-  String _categoryToPlay;
   List _listToPlay;
-  String _url;
   int _teamPlaying;
   int _teamOnePoints = 0;
   int _teamTwoPoints = 0;
@@ -134,7 +131,7 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: GestureDetector(
-                        onTap: () => start(1, _url, _scaffoldKey),
+                        onTap: () => start(1, _scaffoldKey),
                         child: Container(
                             color: Colors.blue,
                             child: Column(
@@ -152,7 +149,7 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: GestureDetector(
-                        onTap: () => start(2, _url, _scaffoldKey),
+                        onTap: () => start(2, _scaffoldKey),
                         child: Container(
                             color: Colors.green,
                             child: Column(
@@ -176,7 +173,7 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: GestureDetector(
-                        onTap: () => start(3, _url, _scaffoldKey),
+                        onTap: () => start(3, _scaffoldKey),
                         child: Container(
                             color: Colors.orange,
                             child: Column(
@@ -194,7 +191,7 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: GestureDetector(
-                        onTap: () => start(4, _url, _scaffoldKey),
+                        onTap: () => start(4, _scaffoldKey),
                         child: Container(
                             color: Colors.teal,
                             child: Column(
@@ -215,7 +212,7 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
               padding: const EdgeInsets.all(8.0),
               child: CustomButton(
                 text: "Rules",
-                onTap: () => getRule("resource/rules/guess_who_rules"),
+                onTap: () => getRule("resource/rules/guess_who_rules_swe"),
               ),
             ),
           ],
@@ -223,7 +220,7 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
     );
   }
 
-  void start(int team, String url, _scaffoldKey) async {
+  void start(int team, _scaffoldKey) async {
     _teamPlaying = team;
     if(_listToPlay == null || _listToPlay.isEmpty){
       String text = "You need to choose a category!";
@@ -266,10 +263,7 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
 
   void getRule(url) async {
     var text = await helper.getFileData(url);
-    setState(() {
-      _ruleText = text;
-    });
 
-    Navigator.push(context, MaterialPageRoute(builder: (context) => RulePage(text: _ruleText),));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => RulePage(text: text),));
   }
 }
