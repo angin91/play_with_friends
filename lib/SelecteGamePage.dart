@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/GuessWhoStartPage.dart';
 import 'package:play_with_friends/Helper.dart';
 import 'package:play_with_friends/games/CharadesStartPage.dart';
-import 'package:play_with_friends/models/CostumButton.dart';
+import 'package:play_with_friends/widgets/CostumButton.dart';
 
 import 'games/SingALongStartPage.dart';
 

@@ -1,0 +1,82 @@
+{
+  "songs": [
+    {
+        "title" : "I Wanna Dance with Somebody",
+        "artist" : "Whitney Houston",
+        "lyric" : "Oh, I wanna dance with somebody \n\nI wanna feel the heat with somebody",
+        "solution" : "Yeah, I wanna dance with somebody \n\nWith somebody who loves me"
+    },
+    {
+        "title" : "Free fallin'",
+        "artist" : "John Mayer",
+        "lyric" : "She's a good girl \n\nloves her mamma",
+        "solution" : "Loves Jesus and America too"
+    },
+    {
+        "title" : "Sweet Home Alabama",
+        "artist" : "Lynyrd Skynyrd",
+        "lyric" : "Sweet home Alabama \n\nWhere the skies are so blue",
+        "solution" : "Sweet home Alabama \n\nLord I'm comin' home to you"
+    },
+    {
+        "title" : "Piano man",
+        "artist" : "Billy Joel",
+        "lyric" : "Sing us a song you're the piano man \n\nSing us a song tonight",
+        "solution" : "Well we're all in the mood for a melody \n\nAnd you've got us feelin' alright"
+    },
+    {
+        "title" : "Mamma Mia",
+        "artist" : "ABBA",
+        "lyric" : "Yes, I've been brokenhearted \n\nBlue since the day we parted",
+        "solution" : "Why, why did I ever let you go \n\nMamma Mia, now I really know"
+    },
+    {
+        "title" : "Your Song",
+        "artist" : "Elton John",
+        "lyric" : "And you can tell everybody \n\nThis is your song",
+        "solution" : "It may be quite simple \n\nbut now that it's done"
+    },
+    {
+        "title" : "We Are The Champions",
+        "artist" : "Queen",
+        "lyric" : "I've paid my dues \n\nTime after time",
+        "solution" : "I've done my sentence but committed no crime"
+    },
+    {
+        "title" : "Hooked on a Feeling",
+        "artist" : "Blue Swede",
+        "lyric" : "When you hold me \n\nIn your arms so tight",
+        "solution" : "You let me know \n\nEverything's all right"
+    },
+    {
+        "title" : "You're the One That I Want",
+        "artist" : "John Travolta, Olivia Newton-John",
+        "lyric" : "You better shape up \n\n'Cause I need a man \n\nAnd my heart is set on you.",
+        "solution" : "You better shape up \n\nYou better understand \n\nTo my heart I must be true."
+    },
+    {
+        "title" : "Dancing Queen",
+        "artist" : "ABBA",
+        "lyric" : "Friday night and the lights are low",
+        "solution" : "Looking out for a place to go"
+    },
+    {
+        "title" : "Don't Stop Me Now",
+        "artist" : "Queen",
+        "lyric" : "I'm a shooting star leaping through the sky \n\nLike a tiger defying the laws of gravity",
+        "solution" : "I'm a racing car passing by like Lady Godiva"
+    },
+    {
+        "title" : "Let It Be",
+        "artist" : "The Beatles",
+        "lyric" : "When I find myself in times of trouble \n\nMother Mary comes to me",
+        "solution" : "Speaking words of wisdom, let it be \n\nAnd in my hour of darkness \n\nShe is standing right in front of me"
+    },
+    {
+        "title" : "Bohemian Rhapsody",
+        "artist" : "Queen",
+        "lyric" : "Mama, just killed a man \n\nPut a gun against his head",
+        "solution" : "Pulled my trigger \n\nnow he's dead"
+    }
+  ]
+}

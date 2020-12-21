@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:play_with_friends/games/general/GuessWho.dart';
+import 'package:play_with_friends/widgets/CostumButton.dart';
 import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/general/RulePage.dart';
-import 'package:play_with_friends/models/CostumButton.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Helper.dart';

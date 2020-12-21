@@ -1,7 +1,11 @@
+import 'dart:convert';
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:play_with_friends/games/general/RulePage.dart';
-import 'package:play_with_friends/models/CostumButton.dart';
+import 'package:play_with_friends/models/Song.dart';
+import 'package:play_with_friends/widgets/CostumButton.dart';
 
 import '../Helper.dart';
 import 'general/SingALong.dart';
@@ -17,13 +21,22 @@ class _SingALongStartPageState extends State<SingALongStartPage> {
   Helper helper;
   int _teamOnePoints = 0;
   int _teamTwoPoints = 0;
+  List<Song> songs;
+  final _random = new Random();
 
   @override
   void initState() {
     super.initState();
     helper = new Helper();
+    setSongList();
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  }
+
+  setSongList() async {
+    var s = await helper.getFileData("resource/songs/song_list");
+    var jsonSongs = jsonDecode(s)['songs'] as List;
+    songs = jsonSongs.map((jsonSong) => Song.fromJson(jsonSong)).toList();
   }
 
   @override
@@ -165,7 +178,13 @@ class _SingALongStartPageState extends State<SingALongStartPage> {
   addPoints(int points) {}
 
   getSong() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => SingALong(songTitle: "(\"I Wanna Dance with Somebody\” by Whitney Houston)", frontText: "Oh, I wanna dance with somebody, I wanna feel the heat with somebody", backText: "Yeah, I wanna dance with somebody, With somebody who loves me")));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => SingALong(song: getRandomSong())));
+  }
+
+  getRandomSong(){
+    var nextInt = _random.nextInt(songs.length);
+    return songs[nextInt];
+
   }
 
   void getRule(url) async {

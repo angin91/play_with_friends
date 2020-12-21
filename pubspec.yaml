@@ -26,6 +26,7 @@ dependencies:
   fullscreen: ^1.0.1
   aeyrium_sensor: ^1.0.7
   wakelock: ^0.2.1+1
+  flip_card: ^0.4.4
   flutter:
     sdk: flutter
 
@@ -63,6 +64,7 @@ flutter:
     - resource/rules/guess_who_rules_swe
     - resource/rules/sing_a_long_rules_swe
     - resource/rules/sing_a_long_rules_eng
+    - resource/songs/song_list
 
   # To add assets to your application, add an assets section, like this:
   # assets:
