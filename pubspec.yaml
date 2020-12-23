@@ -64,6 +64,8 @@ flutter:
     - resource/rules/guess_who_rules_swe
     - resource/rules/sing_a_long_rules_swe
     - resource/rules/sing_a_long_rules_eng
+    - resource/rules/alphabet_game_rules_swe
+    - resource/rules/alphabet_game_rules_eng
     - resource/songs/song_list
 
   # To add assets to your application, add an assets section, like this:

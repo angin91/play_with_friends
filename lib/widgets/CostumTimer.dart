@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 class CostumTimer extends StatefulWidget {
-  CostumTimer({Key key, @required this.time, this.onExpire, this.style}) : super(key: key);
+  CostumTimer({Key key, @required this.time, this.onExpire, this.style, this.rerunOnExpire = false}) : super(key: key);
 
   final int time;
   final Function onExpire;
   final TextStyle style;
+  final bool rerunOnExpire;
 
   @override
   _CostumTimerState createState() => _CostumTimerState();
@@ -38,7 +39,13 @@ class _CostumTimerState extends State<CostumTimer> with WidgetsBindingObserver {
       (Timer timer) {
         if (_start == 0) {
           setState(() {
-            timer.cancel();
+            if(!widget.rerunOnExpire){
+              timer.cancel();
+            }else{
+              setState(() {
+                _start = widget.time;
+              });
+            }
             if(widget.onExpire != null) {
               widget.onExpire();
             }
