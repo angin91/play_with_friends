@@ -59,10 +59,12 @@ class _SelectGamePageState extends State<SelectGamePage> {
                 ),
               ),
               child: Center(
-                  child: Text(
-                "Wanna play a game?",
-                style: TextStyle(color: Colors.white, fontSize: 40),
-              )),
+                child: Text(
+                  "Wanna play a game?",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white, fontSize: 40),
+                ),
+              ),
             ),
             // Make the initial height of the SliverAppBar larger than normal.
             expandedHeight: 150,
@@ -75,7 +77,7 @@ class _SelectGamePageState extends State<SelectGamePage> {
               (context, index) => Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-                child: getCostumBox(index),
+                child: getCostumBox(index)
               ),
               // Builds 1000 ListTiles
               childCount: games.length,
@@ -89,51 +91,75 @@ class _SelectGamePageState extends State<SelectGamePage> {
   Widget getCostumBox(int index) {
     if (index == 0) {
       return CustomBox(
-        text: games.keys.elementAt(index),
         color: Colors.pink[200],
-        icon: Icons.masks,
         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => games.values.elementAt(index)),),
+        height: 100.0,
+        child: getRow(games.keys.elementAt(index), Icons.masks),
       );
     }
     if (index == 1) {
       return CustomBox(
-        text: games.keys.elementAt(index),
         color: Colors.orange[200],
-        icon: Icons.person,
         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => games.values.elementAt(index)),),
+        height: 100.0,
+        child: getRow(games.keys.elementAt(index), Icons.person),
       );
     }
     if (index == 2) {
       return CustomBox(
-        text: games.keys.elementAt(index),
         color: Colors.yellow[200],
-        icon: Icons.music_note,
         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => games.values.elementAt(index)),),
+        height: 100.0,
+        child: getRow(games.keys.elementAt(index), Icons.music_note),
       );
     }
     if (index == 3) {
       return CustomBox(
-        text: games.keys.elementAt(index),
         color: Colors.green[200],
-        icon: Icons.music_note,
         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => games.values.elementAt(index)),),
+        height: 100.0,
+        child: getRow(games.keys.elementAt(index), Icons.music_note),
       );
     }
     if (index == 4) {
       return CustomBox(
-        text: games.keys.elementAt(index),
         color: Colors.green[400],
-        icon: Icons.music_note,
         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => games.values.elementAt(index)),),
+        height: 100.0,
+        child: getRow(games.keys.elementAt(index), Icons.music_note),
       );
     }
     if (index == 5) {
       return CustomBox(
-        text: games.keys.elementAt(index),
         color: Colors.blue[200],
-        icon: Icons.style,
         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => games.values.elementAt(index)),),
+        height: 100.0,
+        child: getRow(games.keys.elementAt(index), Icons.style),
       );
     }
+  }
+
+  Widget getRow(text, icon){
+    return Row(
+      children: [
+        Expanded(
+            flex: 3,
+            child: Center(
+                child: Text(text,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.brown[400],
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold
+                  ),
+                )
+            )
+        ),
+        Expanded(
+          flex: 1,
+          child: Icon(icon),
+        )
+      ],
+    );
   }
 }

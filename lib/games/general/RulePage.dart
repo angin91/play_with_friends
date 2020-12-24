@@ -14,35 +14,38 @@ class _RulePageState extends State<RulePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.black,
         body: Column(
-      children: [
-        Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(40.0),
-              child: Container(
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 2),
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                ),
-                child: SingleChildScrollView(
-                    scrollDirection: Axis.vertical,
-                    child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(widget.text,),
-                        ))
-                ),
+          children: [
+            Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(40.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white, width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    child: SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(widget.text, style: TextStyle(color: Colors.white),),
+                            )
+                        )
+                    ),
+                  ),
+                )
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomButton(
+                text: "back",
+                onTap: () => Navigator.pop(context),
               ),
             )
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: CustomButton(
-            text: "back",
-            onTap: () => Navigator.pop(context),
-          ),
+          ],
         )
-      ],
-    ));
+    );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:play_with_friends/games/general/GuessWho.dart';
 import 'package:play_with_friends/widgets/CostumButton.dart';
+import 'package:play_with_friends/widgets/CustomBox.dart';
 import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/general/RulePage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -84,138 +85,118 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
     final _scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
         key: _scaffoldKey,
-        appBar: AppBar(
-          title: Text("Guess Who"),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.remove_circle),
-              onPressed: () {
-                _resetPoints();
-              },
-            )
-          ],
-        ),
-        body: Column(
-          children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: FutureBuilder(
-                    future: load,
-                    builder: (BuildContext context, AsyncSnapshot snapshot) {
-                      return DropdownButton<List>(
-                        hint: Text("Select category"),
-                        items: _categories.map((description, value) {
-                          return MapEntry(
-                              description,
-                              DropdownMenuItem<List>(
-                                value: value,
-                                child: Text(description),
-                              ));
-                        }).values.toList(),
-                        value: _listToPlay,
-                        onChanged: (newValue) {
-                          setState(() {
-                            _listToPlay = newValue;
-                          });
-                        },
-                      );
-                    }
+        body: SafeArea(
+          child: Container(
+            color: Colors.black,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: FutureBuilder(
+                                future: load,
+                                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                                  return CustomBox(
+                                    color: Colors.grey,
+                                    child: DropdownButton<List>(
+                                      hint: Text("Select category"),
+                                      iconEnabledColor: Colors.grey,
+                                      dropdownColor: Colors.grey,
+                                      items: _categories.map((description, value) {
+                                        return MapEntry(
+                                            description,
+                                            DropdownMenuItem<List>(
+                                              value: value,
+                                              child: Text(description,),
+                                            ));
+                                      }).values.toList(),
+                                      value: _listToPlay,
+                                      onChanged: (newValue) {
+                                        setState(() {
+                                          _listToPlay = newValue;
+                                        });
+                                      },
+                                    ),
+                                  );
+                                }
+                            ),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                          child: Icon(Icons.remove_circle, color: Colors.white,),
+                        onTap: () => _resetPoints(),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            ),
-            Expanded(
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: GestureDetector(
-                        onTap: () => start(1, _scaffoldKey),
-                        child: Container(
-                            color: Colors.blue,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text("Team 1"),
-                                Text(_teamOnePoints.toString(), style: TextStyle(fontSize: 40),),
-                              ],
-                            )
+                Expanded(
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: CustomBox(
+                            onTap: () => start(1, _scaffoldKey),
+                            color: Colors.blue[400],
+                            child: getTeamWidget("Team 1", _teamOnePoints),
+                          ),
                         ),
                       ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: GestureDetector(
-                        onTap: () => start(2, _scaffoldKey),
-                        child: Container(
-                            color: Colors.green,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text("Team 2"),
-                                Text(_teamTwoPoints.toString(), style: TextStyle(fontSize: 40),),
-                              ],
-                            )
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: CustomBox(
+                            onTap: () => start(2, _scaffoldKey),
+                            color: Colors.green[400],
+                            child: getTeamWidget("Team 2", _teamTwoPoints),
+                          ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: GestureDetector(
-                        onTap: () => start(3, _scaffoldKey),
-                        child: Container(
-                            color: Colors.orange,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text("Team 3"),
-                                Text(_teamThreePoints.toString(), style: TextStyle(fontSize: 40),),
-                              ],
-                            )
+                ),
+                Expanded(
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child:  Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: CustomBox(
+                            onTap: () => start(3, _scaffoldKey),
+                            color: Colors.orange[400],
+                            child: getTeamWidget("Team 3", _teamThreePoints),
+                          ),
                         ),
                       ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: GestureDetector(
-                        onTap: () => start(4, _scaffoldKey),
-                        child: Container(
-                            color: Colors.teal,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text("Team 4"),
-                                Text(_teamFourPoints.toString(), style: TextStyle(fontSize: 40),),
-                              ],
-                            )
+                      Expanded(
+                        child:  Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: CustomBox(
+                            onTap: () => start(4, _scaffoldKey),
+                            color: Colors.teal[400],
+                            child: getTeamWidget("Team 4", _teamFourPoints),
+                          ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: CustomButton(
+                    text: "Rules",
+                    onTap: () => getRule("resource/rules/guess_who_rules_swe"),
+                  ),
+                ),
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CustomButton(
-                text: "Rules",
-                onTap: () => getRule("resource/rules/guess_who_rules_swe"),
-              ),
-            ),
-          ],
+          ),
         )
     );
   }
@@ -259,6 +240,23 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
         }
       });
     }
+  }
+
+  Widget getTeamWidget(text, points){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(text, style: TextStyle(
+            color: Colors.brown[400],
+            fontSize: 30,
+            fontWeight: FontWeight.bold),),
+        Text( points.toString(), style: TextStyle(
+          color: Colors.brown[400],
+          fontSize: 50,
+          fontWeight: FontWeight.bold),
+        ),
+      ],
+    );
   }
 
   void getRule(url) async {

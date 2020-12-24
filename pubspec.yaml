@@ -51,22 +51,9 @@ flutter:
   uses-material-design: true
 
   assets:
-    - resource/categories/disney_characters_eng
-    - resource/categories/disney_characters_swe
-    - resource/categories/countries_swe
-    - resource/categories/persons
-    - resource/categories/gods
-    - resource/categories/sports_swe
-    - resource/categories/words_swe
-    - resource/categories/jobs_swe
-    - resource/categories/marvel
-    - resource/rules/guess_who_rules_eng
-    - resource/rules/guess_who_rules_swe
-    - resource/rules/sing_a_long_rules_swe
-    - resource/rules/sing_a_long_rules_eng
-    - resource/rules/alphabet_game_rules_swe
-    - resource/rules/alphabet_game_rules_eng
-    - resource/songs/song_list
+    - resource/categories/
+    - resource/rules/
+    - resource/songs/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -19,9 +19,9 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: SelectGamePage(title: 'Play With Friends'),
+//      home: GuessWhoStartPage(),
 //      home: AlphabetGameStartPage(),
 //      home: SingALongStartPage(),
-//      home: GuessWhoStartPage(),
     );
   }
 }
