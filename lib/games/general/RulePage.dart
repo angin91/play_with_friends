@@ -37,13 +37,6 @@ class _RulePageState extends State<RulePage> {
                   ),
                 )
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CustomButton(
-                text: "back",
-                onTap: () => Navigator.pop(context),
-              ),
-            )
           ],
         )
     );

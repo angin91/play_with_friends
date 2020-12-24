@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:play_with_friends/games/general/GuessWho.dart';
-import 'package:play_with_friends/widgets/CostumButton.dart';
+import 'package:play_with_friends/models/custom_icons.dart';
 import 'package:play_with_friends/widgets/CustomBox.dart';
-import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/general/RulePage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Helper.dart';
@@ -94,6 +93,13 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: GestureDetector(
+                          child: Icon(CustomIcons.help, color: Colors.white,),
+                          onTap: () => getRule("resource/rules/guess_who_rules_swe"),
+                        ),
+                      ),
                       Expanded(
                         child: Center(
                           child: Padding(
@@ -128,10 +134,13 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
                           ),
                         ),
                       ),
-                      GestureDetector(
-                          child: Icon(Icons.remove_circle, color: Colors.white,),
-                        onTap: () => _resetPoints(),
-                      )
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: GestureDetector(
+                            child: Icon(Icons.remove_circle, color: Colors.white,),
+                          onTap: () => _resetPoints(),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -185,13 +194,6 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
                         ),
                       ),
                     ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: CustomButton(
-                    text: "Rules",
-                    onTap: () => getRule("resource/rules/guess_who_rules_swe"),
                   ),
                 ),
               ],
@@ -262,6 +264,21 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
   void getRule(url) async {
     var text = await helper.getFileData(url);
 
-    Navigator.push(context, MaterialPageRoute(builder: (context) => RulePage(text: text),));
+    showModalBottomSheet(context: context, builder: (context) {
+      return Container(
+        height: MediaQuery.of(context).copyWith().size.height * 0.70,
+        color: Colors.transparent,
+        child: new Container(
+            decoration: new BoxDecoration(
+                color: Colors.white.withOpacity(0.9),
+                borderRadius: new BorderRadius.only(
+                    topLeft: const Radius.circular(20.0),
+                    topRight: const Radius.circular(20.0))),
+            child: new Center(
+              child: new Text(text, textAlign: TextAlign.center,),
+            )),
+      );
+    }, isScrollControlled: true);
+//    Navigator.push(context, MaterialPageRoute(builder: (context) => RulePage(text: text),));
   }
 }
