@@ -27,6 +27,8 @@ dependencies:
   aeyrium_sensor: ^1.0.7
   wakelock: ^0.2.1+1
   flip_card: ^0.4.4
+  flutter_svg: ^0.19.0
+  swipeable_card: ^1.0.2
   flutter:
     sdk: flutter
 
@@ -59,6 +61,8 @@ flutter:
     - resource/categories/
     - resource/rules/
     - resource/songs/
+    - resource/challenges/
+    - resource/images/playing-card-back.svg
 
   # To add assets to your application, add an assets section, like this:
   # assets:

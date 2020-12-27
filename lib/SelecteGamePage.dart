@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fullscreen/fullscreen.dart';
 import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/GuessWhoStartPage.dart';
 import 'package:play_with_friends/Helper.dart';
 import 'package:play_with_friends/games/AlphabetGameStartPage.dart';
-import 'package:play_with_friends/games/CharadesStartPage.dart';
-import 'package:play_with_friends/widgets/CostumButton.dart';
+import 'package:play_with_friends/games/general/ChallengeGame.dart';
 import 'package:play_with_friends/widgets/CustomBox.dart';
 
 import 'games/SingALongStartPage.dart';
@@ -34,11 +32,9 @@ class _SelectGamePageState extends State<SelectGamePage> {
   }
 
   Map games = {
-    "Charades": CharadesStartPage(),
+    "Challenge game": ChallengeGame(),
     "Guess Who": GuessWhoStartPage(),
     "Sing-a-Long": SingALongStartPage(),
-    "a-a-Long": SingALongStartPage(),
-    "s-a-Long": SingALongStartPage(),
     "Alphabet game": AlphabetGameStartPage()
   };
 
