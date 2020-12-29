@@ -13,4 +13,5 @@ class CustomIcons {
   static const IconData diamonds_card = IconData(0xe993, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData hearts_card = IconData(0xe9f9, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData spades_card = IconData(0xeaa9, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData crown = IconData(0xf521, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

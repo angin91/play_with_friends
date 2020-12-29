@@ -29,6 +29,8 @@ dependencies:
   flip_card: ^0.4.4
   flutter_svg: ^0.19.0
   swipeable_card: ^1.0.2
+  sliding_up_panel: ^1.0.2
+  auto_size_text: ^2.1.0
   flutter:
     sdk: flutter
 
@@ -62,7 +64,8 @@ flutter:
     - resource/rules/
     - resource/songs/
     - resource/challenges/
-    - resource/images/playing-card-back.svg
+    - resource/cards/
+    - resource/cards/images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -1,0 +1,316 @@
+{
+  "cards": [
+    {
+      "card" : "Hjärter Ess",
+      "task" : "Vattenfall",
+      "description" : "Alla måste dricka och man får inte sluta förrän spelaren till höger har slutat. Spelaren som fick kortet måste vara den första som slutar.",
+      "url" : "resource/cards/images/Hearts-Ace.svg"
+    },
+    {
+      "card" : "Hjärter Två",
+      "task" : "You",
+      "description" : "Du får välja någon som ska dricka",
+      "url" : "resource/cards/images/Hearts-02.svg"
+    },
+    {
+      "card" : "Hjärter Tre",
+      "task" : "Me",
+      "description" : "Du får dricka",
+      "url" : "resource/cards/images/Hearts-03.svg"
+    },
+    {
+      "card" : "Hjärter Fyra",
+      "task" : "Tjejer",
+      "description" : "Alla tjejer ska dricka",
+      "url" : "resource/cards/images/Hearts-04.svg"
+    },
+    {
+      "card" : "Hjärter Fem",
+      "task" : "Bust a Jive",
+      "description" : "Gör en rörelse, nästa person ska göra din rörelse och sen komma på en egen. Om någon gör fel rörelse eller inte kommer på någon får den dricka.",
+      "url" : "resource/cards/images/Hearts-05.svg"
+    },
+    {
+      "card" : "Hjärter Sex",
+      "task" : "Killar",
+      "description" : "Alla killar ska dricka",
+      "url" : "resource/cards/images/Hearts-06.svg"
+    },
+    {
+      "card" : "Hjärter Sju",
+      "task" : "Räkna",
+      "description" : "Man ska räkna runt bordet. Den som får kortet börjar på ett nästa säger två osv. Men får dock inte säga något som innehåller 7 (7, 17, 27 ect), man får inte säga något som är delbart på 7 (14, 21, 28 ect) och man får inte heller säga något som har dubbelsiffra (11, 22, 33 ect). Den som inte klarar det får dricka.",
+      "url" : "resource/cards/images/Hearts-07.svg"
+    },
+    {
+      "card" : "Hjärter Åtta",
+      "task" : "Kategori",
+      "description" : "Den som drar kortet börjar med att säga en kategori. Alla ska i turordning säga något inom kategorin. Om en spelare inte kommer på något, ska hen dricka och rundan avslutas.",
+      "url" : "resource/cards/images/Hearts-08.svg"
+    },
+    {
+      "card" : "Hjärter Nio",
+      "task" : "Rhyme",
+      "description" : "Den som drar kortet börjar med att säga ett ord. Alla ska i turordning rimma på ordet. Om en spelare inte kommer på något , ska hen dricka och rundan avslutas.",
+      "url" : "resource/cards/images/Hearts-09.svg"
+    },
+    {
+      "card" : "Hjärter Tio",
+      "task" : "Social",
+      "description" : "Alla skålar och dricker.",
+      "url" : "resource/cards/images/Hearts-10.svg"
+    },
+    {
+      "card" : "Hjärter Knekt",
+      "task" : "Regel",
+      "description" : "Den som drar kortet ska komma på en regel som gäller för resten av spelet.",
+      "url" : "resource/cards/images/Hearts-Jack.svg"
+    },
+    {
+      "card" : "Hjärter Dam",
+      "task" : "Frågor",
+      "description" : "Den som drar kortet ska börja ställa en fråga till en valfri spelare. Den som i sin tur ska INTE svara på frågan utan ska ställa en ny fråga till en annan spelare. Om spelaren skrattar, svarar på frågan eller tvekar, ska dricka och rundan avslutas.",
+      "url" : "resource/cards/images/Hearts-Queen.svg"
+    },
+    {
+      "card" : "Hjärter Kung",
+      "task" : "Kings cup",
+      "description" : "Den som drar kortet ska hälla lite av sin dricka ner i muggen i mitten. Om det är den sista kungen som dras, ska hen istället dricka upp det som finns i muggen.",
+      "url" : "resource/cards/images/Hearts-King.svg"
+    },
+    {
+      "card" : "Spader Ess",
+      "task" : "Vattenfall",
+      "description" : "Alla måste dricka och man får inte sluta förrän spelaren till höger har slutat. Spelaren som fick kortet måste vara den första som slutar",
+      "url" : "resource/cards/images/Spades-Ace.svg"
+    },
+    {
+      "card" : "Spader Två",
+      "task" : "You",
+      "description" : "Du får välja någon som ska dricka",
+      "url" : "resource/cards/images/Spades-02.svg"
+    },
+    {
+      "card" : "Spader Tre",
+      "task" : "Me",
+      "description" : "Du får dricka",
+      "url" : "resource/cards/images/Spades-03.svg"
+    },
+    {
+      "card" : "Spader Fyra",
+      "task" : "Tjejer",
+      "description" : "Alla tjejer ska dricka",
+      "url" : "resource/cards/images/Spades-04.svg"
+    },
+    {
+      "card" : "Spader Fem",
+      "task" : "Bust a Jive",
+      "description" : "Gör en rörelse, nästa person ska göra din rörelse och sen komma på en egen. Om någon gör fel rörelse eller inte kommer på någon får den dricka.",
+      "url" : "resource/cards/images/Spades-05.svg"
+    },
+    {
+      "card" : "Spader Sex",
+      "task" : "Killar",
+      "description" : "Alla killar ska dricka",
+      "url" : "resource/cards/images/Spades-06.svg"
+    },
+    {
+      "card" : "Spader Sju",
+      "task" : "Räkna",
+      "description" : "Man ska räkna runt bordet. Den som får kortet börjar på ett nästa säger två osv. Men får dock inte säga något som innehåller 7 (7, 17, 27 ect), man får inte säga något som är delbart på 7 (14, 21, 28 ect) och man får inte heller säga något som har dubbelsiffra (11, 22, 33 ect). Den som inte klarar det får dricka.",
+      "url" : "resource/cards/images/Spades-07.svg"
+    },
+    {
+      "card" : "Spader Åtta",
+      "task" : "Kategori",
+      "description" : "Den som drar kortet börjar med att säga en kategori. Alla ska i turordning säga något inom kategorin. Om en spelare inte kommer på något, ska hen dricka och rundan avslutas.",
+      "url" : "resource/cards/images/Spades-08.svg"
+    },
+    {
+      "card" : "Spader Nio",
+      "task" : "Rhyme",
+      "description" : "Den som drar kortet börjar med att säga ett ord. Alla ska i turordning rimma på ordet. Om en spelare inte kommer på något , ska hen dricka och rundan avslutas.",
+      "url" : "resource/cards/images/Spades-09.svg"
+    },
+    {
+      "card" : "Spader Tio",
+      "task" : "Social",
+      "description" : "Alla skålar och dricker.",
+      "url" : "resource/cards/images/Spades-10.svg"
+    },
+    {
+      "card" : "Spader Knekt",
+      "task" : "Regel",
+      "description" : "Den som drar kortet ska komma på en regel som gäller för resten av spelet.",
+      "url" : "resource/cards/images/Spades-Jack.svg"
+    },
+    {
+      "card" : "Spader Dam",
+      "task" : "Frågor",
+      "description" : "Den som drar kortet ska börja ställa en fråga till en valfri spelare. Den som i sin tur ska INTE svara på frågan utan ska ställa en ny fråga till en annan spelare. Om spelaren skrattar, svarar på frågan eller tvekar, ska dricka och rundan avslutas.",
+      "url" : "resource/cards/images/Spades-Queen.svg"
+    },
+    {
+      "card" : "Spader Kung",
+      "task" : "Kings cup",
+      "description" : "Den som drar kortet ska hälla lite av sin dricka ner i muggen i mitten. Om det är den sista kungen som dras, ska hen istället dricka upp det som finns i muggen.",
+      "url" : "resource/cards/images/Spades-King.svg"
+    },
+    {
+      "card" : "Ruter Ess",
+      "task" : "Vattenfall",
+      "description" : "Alla måste dricka och man får inte sluta förrän spelaren till höger har slutat. Spelaren som fick kortet måste vara den första som slutar",
+      "url" : "resource/cards/images/Diamonds-Ace.svg"
+    },
+    {
+      "card" : "Ruter Två",
+      "task" : "You",
+      "description" : "Du får välja någon som ska dricka",
+      "url" : "resource/cards/images/Diamonds-02.svg"
+    },
+    {
+      "card" : "Ruter Tre",
+      "task" : "Me",
+      "description" : "Du får dricka",
+      "url" : "resource/cards/images/Diamonds-03.svg"
+    },
+    {
+      "card" : "Ruter Fyra",
+      "task" : "Tjejer",
+      "description" : "Alla tjejer ska dricka",
+      "url" : "resource/cards/images/Diamonds-04.svg"
+    },
+    {
+      "card" : "Ruter Fem",
+      "task" : "Bust a Jive",
+      "description" : "Gör en rörelse, nästa person ska göra din rörelse och sen komma på en egen. Om någon gör fel rörelse eller inte kommer på någon får den dricka.",
+      "url" : "resource/cards/images/Diamonds-05.svg"
+    },
+    {
+      "card" : "Ruter Sex",
+      "task" : "Killar",
+      "description" : "Alla killar ska dricka",
+      "url" : "resource/cards/images/Diamonds-06.svg"
+    },
+    {
+      "card" : "Ruter Sju",
+      "task" : "Räkna",
+      "description" : "Man ska räkna runt bordet. Den som får kortet börjar på ett nästa säger två osv. Men får dock inte säga något som innehåller 7 (7, 17, 27 ect), man får inte säga något som är delbart på 7 (14, 21, 28 ect) och man får inte heller säga något som har dubbelsiffra (11, 22, 33 ect). Den som inte klarar det får dricka.",
+      "url" : "resource/cards/images/Diamonds-07.svg"
+    },
+    {
+      "card" : "Ruter Åtta",
+      "task" : "Kategori",
+      "description" : "Den som drar kortet börjar med att säga en kategori. Alla ska i turordning säga något inom kategorin. Om en spelare inte kommer på något, ska hen dricka och rundan avslutas.",
+      "url" : "resource/cards/images/Diamonds-08.svg"
+    },
+    {
+      "card" : "Ruter Nio",
+      "task" : "Rhyme",
+      "description" : "Den som drar kortet börjar med att säga ett ord. Alla ska i turordning rimma på ordet. Om en spelare inte kommer på något , ska hen dricka och rundan avslutas.",
+      "url" : "resource/cards/images/Diamonds-09.svg"
+    },
+    {
+      "card" : "Ruter Tio",
+      "task" : "Social",
+      "description" : "Alla skålar och dricker.",
+      "url" : "resource/cards/images/Diamonds-10.svg"
+    },
+    {
+      "card" : "Ruter Knekt",
+      "task" : "Regel",
+      "description" : "Den som drar kortet ska komma på en regel som gäller för resten av spelet.",
+      "url" : "resource/cards/images/Diamonds-Jack.svg"
+    },
+    {
+      "card" : "Ruter Dam",
+      "task" : "Frågor",
+      "description" : "Den som drar kortet ska börja ställa en fråga till en valfri spelare. Den som i sin tur ska INTE svara på frågan utan ska ställa en ny fråga till en annan spelare. Om spelaren skrattar, svarar på frågan eller tvekar, ska dricka och rundan avslutas.",
+      "url" : "resource/cards/images/Diamonds-Queen.svg"
+    },
+    {
+      "card" : "Ruter Kung",
+      "task" : "Kings cup",
+      "description" : "Den som drar kortet ska hälla lite av sin dricka ner i muggen i mitten. Om det är den sista kungen som dras, ska hen istället dricka upp det som finns i muggen.",
+      "url" : "resource/cards/images/Diamonds-King.svg"
+    },
+    {
+      "card" : "Klöver Ess",
+      "task" : "Vattenfall",
+      "description" : "Alla måste dricka och man får inte sluta förrän spelaren till höger har slutat. Spelaren som fick kortet måste vara den första som slutar",
+      "url" : "resource/cards/images/Clubs-Ace.svg"
+    },
+    {
+      "card" : "Klöver Två",
+      "task" : "You",
+      "description" : "Du får välja någon som ska dricka",
+      "url" : "resource/cards/images/Clubs-02.svg"
+    },
+    {
+      "card" : "Klöver Tre",
+      "task" : "Me",
+      "description" : "Du får dricka",
+      "url" : "resource/cards/images/Clubs-03.svg"
+    },
+    {
+      "card" : "Klöver Fyra",
+      "task" : "Tjejer",
+      "description" : "Alla tjejer ska dricka",
+      "url" : "resource/cards/images/Clubs-04.svg"
+    },
+    {
+      "card" : "Klöver Fem",
+      "task" : "Bust a Jive",
+      "description" : "Gör en rörelse, nästa person ska göra din rörelse och sen komma på en egen. Om någon gör fel rörelse eller inte kommer på någon får den dricka.",
+      "url" : "resource/cards/images/Clubs-05.svg"
+    },
+    {
+      "card" : "Klöver Sex",
+      "task" : "Killar",
+      "description" : "Alla killar ska dricka",
+      "url" : "resource/cards/images/Clubs-06.svg"
+    },
+    {
+      "card" : "Klöver Sju",
+      "task" : "Räkna",
+      "description" : "Man ska räkna runt bordet. Den som får kortet börjar på ett nästa säger två osv. Men får dock inte säga något som innehåller 7 (7, 17, 27 ect), man får inte säga något som är delbart på 7 (14, 21, 28 ect) och man får inte heller säga något som har dubbelsiffra (11, 22, 33 ect). Den som inte klarar det får dricka.",
+      "url" : "resource/cards/images/Clubs-07.svg"
+    },
+    {
+      "card" : "Klöver Åtta",
+      "task" : "Kategori",
+      "description" : "Den som drar kortet börjar med att säga en kategori. Alla ska i turordning säga något inom kategorin. Om en spelare inte kommer på något, ska hen dricka och rundan avslutas.",
+      "url" : "resource/cards/images/Clubs-08.svg"
+    },
+    {
+      "card" : "Klöver Nio",
+      "task" : "Rhyme",
+      "description" : "Den som drar kortet börjar med att säga ett ord. Alla ska i turordning rimma på ordet. Om en spelare inte kommer på något , ska hen dricka och rundan avslutas.",
+      "url" : "resource/cards/images/Clubs-09.svg"
+    },
+    {
+      "card" : "Klöver Tio",
+      "task" : "Social",
+      "description" : "Alla skålar och dricker.",
+      "url" : "resource/cards/images/Clubs-10.svg"
+    },
+    {
+      "card" : "Klöver Knekt",
+      "task" : "Regel",
+      "description" : "Den som drar kortet ska komma på en regel som gäller för resten av spelet.",
+      "url" : "resource/cards/images/Clubs-Jack.svg"
+    },
+    {
+      "card" : "Klöver Dam",
+      "task" : "Frågor",
+      "description" : "Den som drar kortet ska börja ställa en fråga till en valfri spelare. Den som i sin tur ska INTE svara på frågan utan ska ställa en ny fråga till en annan spelare. Om spelaren skrattar, svarar på frågan eller tvekar, ska dricka och rundan avslutas.",
+      "url" : "resource/cards/images/Clubs-Queen.svg"
+    },
+    {
+      "card" : "Klöver Kung",
+      "task" : "Kings cup",
+      "description" : "Den som drar kortet ska hälla lite av sin dricka ner i muggen i mitten. Om det är den sista kungen som dras, ska hen istället dricka upp det som finns i muggen.",
+      "url" : "resource/cards/images/Clubs-King.svg"
+    }
+  ]
+}

@@ -37,7 +37,7 @@
     },
     {
       "title" : "Vattenfall",
-      "challenge" : "Alla måste dricka om amn får inte sluta förrän spelaren till höger har slutat. Spelaren som fick kortet måste vara den sista som slutar",
+      "challenge" : "Alla måste dricka och man får inte sluta förrän spelaren till höger har slutat. Spelaren som fick kortet måste vara den första som slutar",
       "number" : "08"
     },
     {
@@ -587,7 +587,7 @@
     },
     {
       "title" : "Arghhh!",
-      "challenge" : "Du msåte prata som en pirat tills nästa runda. De andra spelarna får rösta om du klarat det",
+      "challenge" : "Du måste prata som en pirat tills nästa runda. De andra spelarna får rösta om du klarat det",
       "number" : "118"
     },
     {

@@ -4,6 +4,7 @@ import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/GuessWhoSta
 import 'package:play_with_friends/Helper.dart';
 import 'package:play_with_friends/games/AlphabetGameStartPage.dart';
 import 'package:play_with_friends/games/general/ChallengeGame.dart';
+import 'package:play_with_friends/games/general/RingOfFire.dart';
 import 'package:play_with_friends/widgets/CustomBox.dart';
 
 import 'games/SingALongStartPage.dart';
@@ -33,6 +34,7 @@ class _SelectGamePageState extends State<SelectGamePage> {
 
   Map games = {
     "Challenge game": ChallengeGame(),
+    "Ring of Fire": RingOfFire(),
     "Guess Who": GuessWhoStartPage(),
     "Sing-a-Long": SingALongStartPage(),
     "Alphabet game": AlphabetGameStartPage()
