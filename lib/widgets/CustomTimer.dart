@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-class CostumTimer extends StatefulWidget {
-  CostumTimer({Key key, @required this.time, this.onExpire, this.style, this.rerunOnExpire = false}) : super(key: key);
+class CustomTimer extends StatefulWidget {
+  CustomTimer({Key key, @required this.time, this.onExpire, this.style, this.rerunOnExpire = false}) : super(key: key);
 
   final int time;
   final Function onExpire;
@@ -10,10 +10,10 @@ class CostumTimer extends StatefulWidget {
   final bool rerunOnExpire;
 
   @override
-  _CostumTimerState createState() => _CostumTimerState();
+  _CustomTimerState createState() => _CustomTimerState();
 }
 
-class _CostumTimerState extends State<CostumTimer> with WidgetsBindingObserver {
+class _CustomTimerState extends State<CustomTimer> with WidgetsBindingObserver {
   Timer _timer;
   int _start;
 

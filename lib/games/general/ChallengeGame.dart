@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:play_with_friends/models/Challenge.dart';
 import 'package:play_with_friends/widgets/ChallengeCard.dart';
-import 'package:play_with_friends/widgets/CostumButton.dart';
-import 'package:play_with_friends/widgets/CostumDeckCard.dart';
+import 'package:play_with_friends/widgets/CustomButton.dart';
+import 'package:play_with_friends/widgets/CustomDeckCard.dart';
 import 'package:swipeable_card/swipeable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

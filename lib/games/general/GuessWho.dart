@@ -5,7 +5,7 @@ import 'package:fullscreen/fullscreen.dart';
 import 'package:flutter/services.dart';
 import "dart:math";
 import 'package:aeyrium_sensor/aeyrium_sensor.dart';
-import 'package:play_with_friends/widgets/CostumTimer.dart';
+import 'package:play_with_friends/widgets/CustomTimer.dart';
 import 'package:wakelock/wakelock.dart';
 
 class GuessWho extends StatefulWidget {
@@ -77,7 +77,7 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
             color: _color,
             child: _started ? Column(
               children: [
-                CostumTimer(
+                CustomTimer(
                   time: 60,
                   onExpire: () => _finish(),
                   style: TextStyle(fontSize: 40),),
@@ -95,7 +95,7 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
               children: [
                 Expanded(
                   child: Center(
-                    child: CostumTimer(
+                    child: CustomTimer(
                       time: 3,
                       style: TextStyle(fontSize: 120),
                       onExpire: () => setState(() {

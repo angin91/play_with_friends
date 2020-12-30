@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:play_with_friends/models/DeckCard.dart';
 import 'package:play_with_friends/models/custom_icons.dart';
-import 'package:play_with_friends/widgets/CostumDeckCard.dart';
+import 'package:play_with_friends/widgets/CustomDeckCard.dart';
 import 'package:swipeable_card/swipeable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

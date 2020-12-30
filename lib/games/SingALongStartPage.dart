@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:play_with_friends/games/general/RulePage.dart';
 import 'package:play_with_friends/models/Song.dart';
-import 'package:play_with_friends/widgets/CostumButton.dart';
+import 'package:play_with_friends/widgets/CustomButton.dart';
 
 import '../Helper.dart';
 import 'general/SingALong.dart';

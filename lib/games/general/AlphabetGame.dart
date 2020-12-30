@@ -8,9 +8,9 @@ import "dart:math";
 import 'package:aeyrium_sensor/aeyrium_sensor.dart';
 import 'package:play_with_friends/Helper.dart';
 import 'package:play_with_friends/models/custom_icons.dart';
-import 'package:play_with_friends/widgets/CostumButton.dart';
-import 'package:play_with_friends/widgets/CostumDeckCard.dart';
-import 'package:play_with_friends/widgets/CostumTimer.dart';
+import 'package:play_with_friends/widgets/CustomButton.dart';
+import 'package:play_with_friends/widgets/CustomDeckCard.dart';
+import 'package:play_with_friends/widgets/CustomTimer.dart';
 import 'package:wakelock/wakelock.dart';
 
 class AlphabetGame extends StatefulWidget {

@@ -73,7 +73,7 @@ class _SelectGamePageState extends State<SelectGamePage> {
               ),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
-                      (context, index) => getCostumBox(index),
+                      (context, index) => getCustomBox(index),
                   childCount: 6,
                 ),
               ),
@@ -83,7 +83,7 @@ class _SelectGamePageState extends State<SelectGamePage> {
     );
   }
 
-  Widget getCostumBox(int index) {
+  Widget getCustomBox(int index) {
     if (index == 0) {
       return Padding(
         padding: const EdgeInsets.all(8.0),

@@ -1,7 +1,7 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:play_with_friends/models/Song.dart';
-import 'package:play_with_friends/widgets/CostumButton.dart';
+import 'package:play_with_friends/widgets/CustomButton.dart';
 import 'package:wakelock/wakelock.dart';
 
 class SingALong extends StatefulWidget {

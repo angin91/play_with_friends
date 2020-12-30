@@ -4,7 +4,7 @@ import 'package:play_with_friends/Helper.dart';
 import 'package:play_with_friends/games/general/AlphabetGame.dart';
 import 'package:play_with_friends/games/general/RulePage.dart';
 import 'package:play_with_friends/widgets/BaseAlertTextDialog.dart';
-import 'package:play_with_friends/widgets/CostumButton.dart';
+import 'package:play_with_friends/widgets/CustomButton.dart';
 
 class AlphabetGameStartPage extends StatefulWidget {
   AlphabetGameStartPage({Key key}) : super(key: key);

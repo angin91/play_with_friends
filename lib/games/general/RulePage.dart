@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:play_with_friends/widgets/CostumButton.dart';
+import 'package:play_with_friends/widgets/CustomButton.dart';
 
 class RulePage extends StatefulWidget {
   RulePage({Key key, @required this.text}) : super(key: key);
