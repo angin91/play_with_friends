@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/GuessWhoStartPage.dart';
@@ -33,8 +34,18 @@ class _SelectGamePageState extends State<SelectGamePage> {
   }
 
   Map games = {
+    "Guess Who": GuessWhoStartPage(),
+    "Sing-a-Long": SingALongStartPage(),
+    "Alphabet game": AlphabetGameStartPage(),
     "Challenge game": ChallengeGame(),
-    "Ring of Fire": RingOfFire(),
+    "Ring of Fire": RingOfFire()
+  };
+
+  Map drinkingGames = {
+    "Challenge game": ChallengeGame(),
+    "Ring of Fire": RingOfFire()
+  };
+  Map teamGames = {
     "Guess Who": GuessWhoStartPage(),
     "Sing-a-Long": SingALongStartPage(),
     "Alphabet game": AlphabetGameStartPage()
@@ -44,43 +55,29 @@ class _SelectGamePageState extends State<SelectGamePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      color: Colors.black,
+      color: const Color.fromRGBO(229, 229, 229, 1),
       child: CustomScrollView(
         slivers: [
           SliverAppBar(
             flexibleSpace: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Colors.grey[600], Colors.black],
-                  begin: FractionalOffset.topCenter,
-                  end: FractionalOffset.bottomCenter,
-                ),
-              ),
+              color: const Color.fromRGBO(229, 229, 229, 1),
               child: Center(
                 child: Text(
-                  "Wanna play a game?",
+                  "Pick a game!",
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white, fontSize: 40),
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
-            // Make the initial height of the SliverAppBar larger than normal.
             expandedHeight: 150,
           ),
           SliverList(
-            // Use a delegate to build items as they're scrolled on screen.
             delegate: SliverChildBuilderDelegate(
-              // The builder function returns a ListTile with a title that
-              // displays the index of the current item.
-              (context, index) => Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-                child: getCostumBox(index)
-              ),
+              (context, index) => getCostumBox(index),
               // Builds 1000 ListTiles
-              childCount: games.length,
+              childCount: 6,
             ),
-          )
+          ),
         ],
       ),
     ));
@@ -88,76 +85,126 @@ class _SelectGamePageState extends State<SelectGamePage> {
 
   Widget getCostumBox(int index) {
     if (index == 0) {
-      return CustomBox(
-        color: Colors.pink[200],
-        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => games.values.elementAt(index)),),
-        height: 100.0,
-        child: getRow(games.keys.elementAt(index), Icons.masks),
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Opacity(
+            opacity: 0.7,
+            child: Text(
+              "ALL GAMES",
+              style: TextStyle(fontSize: 22, ),
+            )
+        ),
       );
     }
     if (index == 1) {
-      return CustomBox(
-        color: Colors.orange[200],
-        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => games.values.elementAt(index)),),
-        height: 100.0,
-        child: getRow(games.keys.elementAt(index), Icons.person),
-      );
+      return _buildCarousel(context, games.length, games);
     }
     if (index == 2) {
-      return CustomBox(
-        color: Colors.yellow[200],
-        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => games.values.elementAt(index)),),
-        height: 100.0,
-        child: getRow(games.keys.elementAt(index), Icons.music_note),
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Opacity(
+            opacity: 0.7,
+            child: Text(
+              "DRINKING GAMES",
+              style: TextStyle(fontSize: 22, ),
+            )
+        ),
       );
     }
     if (index == 3) {
-      return CustomBox(
-        color: Colors.green[200],
-        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => games.values.elementAt(index)),),
-        height: 100.0,
-        child: getRow(games.keys.elementAt(index), Icons.music_note),
-      );
+      return _buildCarousel(context, drinkingGames.length, drinkingGames);
     }
     if (index == 4) {
-      return CustomBox(
-        color: Colors.green[400],
-        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => games.values.elementAt(index)),),
-        height: 100.0,
-        child: getRow(games.keys.elementAt(index), Icons.music_note),
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Opacity(
+            opacity: 0.7,
+            child: Text(
+              "TEAM-GAMES",
+              style: TextStyle(fontSize: 22, ),
+            )
+        ),
       );
     }
     if (index == 5) {
-      return CustomBox(
-        color: Colors.blue[200],
-        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => games.values.elementAt(index)),),
-        height: 100.0,
-        child: getRow(games.keys.elementAt(index), Icons.style),
-      );
+      return _buildCarousel(context, teamGames.length, teamGames);
     }
+    return Container();
   }
 
-  Widget getRow(text, icon){
-    return Row(
-      children: [
-        Expanded(
-            flex: 3,
-            child: Center(
-                child: Text(text,
-                  textAlign: TextAlign.center,
+  Widget _buildCarousel(BuildContext context, int carouselLenght, Map games) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          SizedBox(
+            height: 300.0,
+            child: PageView.builder(
+              itemCount: carouselLenght,
+              controller: PageController(viewportFraction: 0.8),
+              itemBuilder: (BuildContext context, int itemIndex) {
+                if(games.keys.elementAt(itemIndex).toString().contains("Ring of Fire")){
+                  return _buildCarouselItem(context, itemIndex, Colors.blue[800], Colors.blue[400]);
+                }
+                if(games.keys.elementAt(itemIndex).toString().contains("Sing-a-Long")){
+                  return _buildCarouselItem(context, itemIndex, Colors.purple[800], Colors.purple[400]);
+                }
+                if(games.keys.elementAt(itemIndex).toString().contains("Ring of Fire")){
+                  return _buildCarouselItem(context, itemIndex, Colors.blue[800], Colors.blue[400]);
+                }
+                if(games.keys.elementAt(itemIndex).toString().contains("Challenge game")){
+                  return _buildCarouselItem(context, itemIndex, Colors.yellow[900], Colors.yellow[700]);
+                }
+                if(games.keys.elementAt(itemIndex).toString().contains("Guess who")){
+                  return _buildCarouselItem(context, itemIndex, Colors.green[800], Colors.green[400]);
+                }
+                if(games.keys.elementAt(itemIndex).toString().contains("Alphabet game")){
+                  return _buildCarouselItem(context, itemIndex, Colors.grey[800], Colors.grey[400]);
+                }
+                return _buildCarouselItem(context, itemIndex, Colors.green[800], Colors.green[400]);
+              },
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _buildCarouselItem(BuildContext context, int itemIndex, Color color1, Color color2) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 8.0),
+      child: CustomBox(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(height: 40,),
+            Expanded(
+              child: Center(
+                child: Text(
+                  games.keys.elementAt(itemIndex),
                   style: TextStyle(
-                      color: Colors.brown[400],
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white
                   ),
-                )
-            )
+                ),
+              ),
+            ),
+            Row(
+              children: [
+                Spacer(),
+                Icon(Icons.play_circle_fill, color: Colors.white, size: 40,),
+                SizedBox(width: 20,)
+              ],
+            ),
+            SizedBox(height: 20,)
+          ],
         ),
-        Expanded(
-          flex: 1,
-          child: Icon(icon),
-        )
-      ],
+        linearColor1: color1,
+        linearColor2: color2,
+        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => games.values.elementAt(itemIndex)),),
+      )
     );
   }
 }

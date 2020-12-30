@@ -77,27 +77,10 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
             color: _color,
             child: _started ? Column(
               children: [
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("Points"),
-                          Text(_points.toString()),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: CostumTimer(
-                        time: 60,
-                        onExpire: () => _finish(),
-                        style: TextStyle(fontSize: 40),),
-                    ),
-                  ],
-                ),
+                CostumTimer(
+                  time: 60,
+                  onExpire: () => _finish(),
+                  style: TextStyle(fontSize: 40),),
                 Expanded(
                   child: Center(
                     child: Text(
@@ -144,7 +127,7 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
   _passOrGood(event){
     if (event.pitch > 0.7 && !_waiting) {
       setState(() {
-        _text = "Good";
+        _text = "";
         _color = Colors.green;
         _waiting = true;
         _points++;
@@ -164,7 +147,7 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
     }
     if (event.pitch < -1.0 && !_waiting) {
       setState(() {
-        _text = "Pass";
+        _text = "";
         _color = Colors.red;
         _waiting = true;
         _points--;

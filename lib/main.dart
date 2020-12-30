@@ -4,6 +4,7 @@ import 'package:play_with_friends/games/GuessWhoStartPage.dart';
 import 'package:play_with_friends/games/SingALongStartPage.dart';
 import 'package:play_with_friends/games/general/AlphabetGame.dart';
 import 'package:play_with_friends/games/general/ChallengeGame.dart';
+import 'package:play_with_friends/games/general/RingOfFire.dart';
 import 'SelecteGamePage.dart';
 
 void main() {
@@ -17,11 +18,13 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         // is not restarted.
+        fontFamily: "Space Grotesk",
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         canvasColor: Colors.transparent,
       ),
      home: SelectGamePage(title: 'Play With Friends'),
+     // home: RingOfFire(),
 //      home: ChallengeGame(),
 //      home: GuessWhoStartPage(),
 //      home: AlphabetGameStartPage(),

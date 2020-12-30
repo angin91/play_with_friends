@@ -1,10 +1,15 @@
 import 'dart:async';
 
+import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:fullscreen/fullscreen.dart';
 import 'package:flutter/services.dart';
 import "dart:math";
 import 'package:aeyrium_sensor/aeyrium_sensor.dart';
+import 'package:play_with_friends/Helper.dart';
+import 'package:play_with_friends/models/custom_icons.dart';
+import 'package:play_with_friends/widgets/CostumButton.dart';
+import 'package:play_with_friends/widgets/CostumDeckCard.dart';
 import 'package:play_with_friends/widgets/CostumTimer.dart';
 import 'package:wakelock/wakelock.dart';
 
@@ -16,16 +21,11 @@ class AlphabetGame extends StatefulWidget {
 }
 
 class _AlphabetGameState extends State<AlphabetGame> with WidgetsBindingObserver {
-  FullScreen fullscreen;
   final _random = new Random();
+  Helper helper;
 
-  List gameList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V"];
-  int _currentIndex;
-
-  String _text = "";
-  Color _color = Colors.blue;
-  int _points = 0;
-  bool _started = false;
+  List alphabetList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V"];
+  String _letter;
 
   @override
   void setState(fn) {
@@ -37,102 +37,82 @@ class _AlphabetGameState extends State<AlphabetGame> with WidgetsBindingObserver
   @override
   void initState() {
     super.initState();
-    fullscreen = new FullScreen();
-    Wakelock.enable();
-    enterFullScreen(FullScreenMode.EMERSIVE_STICKY);
-    SystemChrome.setPreferredOrientations(
-        [DeviceOrientation.landscapeRight, DeviceOrientation.landscapeLeft]);
-    WidgetsBinding.instance.addObserver(this);
-
+    helper = new Helper();
     start();
+    Wakelock.enable();
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   }
 
   start(){
-    setRandomText();
-  }
-
-  void enterFullScreen(FullScreenMode fullScreenMode) async {
-    await fullscreen.enterFullScreen(fullScreenMode);
-  }
-
-  void exitFullScreen() async {
-    await fullscreen.exitFullScreen();
+    setRandomLetter();
   }
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onDoubleTap: () => Navigator.pop(context),
-        child: Scaffold(
-          body: Container(
-            color: _color,
-            child: _started ? Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: CostumTimer(
-                    time: 3,
-                    onExpire: () => _finish(),
-                    rerunOnExpire: true,
-                    style: TextStyle(fontSize: 40),),
-                ),
-                Expanded(
-                  child: Center(
-                    child: Text(
-                      _text,
-                      style: TextStyle(fontSize: 60),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-              ],
-            ) : Row(
-              children: [
-                Expanded(
-                  child: Center(
-                    child: CostumTimer(
-                      time: 3,
-                      style: TextStyle(fontSize: 120),
-                      onExpire: () => setState(() {
-                        _started = true;
-                      }),
-                    ),
-                  ),
-                ),
-              ],
+    double width = MediaQuery.of(context).size.width * 0.7;
+    double height = MediaQuery.of(context).size.height * 0.7;
+    GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
+
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Center(
+              child: FlipCard(
+                key: cardKey,
+                onFlipDone: (isFront) {
+                  if(!isFront) flipBack(cardKey);
+                },
+              )
             ),
           ),
-        ));
+          GestureDetector(
+              onTap: () => getRule("resource/rules/alphabet_game_rules_swe"),
+              child: Icon(CustomIcons.help, color: Colors.white,)
+          )
+        ],
+      ),
+    );
   }
 
-  setRandomText() {
-    _currentIndex = _random.nextInt(gameList.length);
-    String text = gameList[_currentIndex];
-    setState(() {
-      _text = text;
-    });
+  setRandomLetter() {
+    var currentIndex = _random.nextInt(alphabetList.length);
+    String letter = alphabetList[currentIndex];
+    // setState(() {
+      // _letter = letter;
+    // });
   }
 
-  _finish(){
-    setRandomText();
+  getRule(url) async {
+    var text = await helper.getFileData(url);
+
+    showModalBottomSheet(context: context, builder: (context) {
+      return Container(
+        height: MediaQuery.of(context).copyWith().size.height * 0.70,
+        color: Colors.transparent,
+        child: new Container(
+            decoration: new BoxDecoration(
+                color: Colors.white.withOpacity(0.9),
+                borderRadius: new BorderRadius.only(
+                    topLeft: const Radius.circular(20.0),
+                    topRight: const Radius.circular(20.0))),
+            child: new Center(
+              child: new Text(text, textAlign: TextAlign.center,),
+            )),
+      );
+    }, isScrollControlled: true);
+  }
+
+  flipBack(cardKey){
+    setRandomLetter();
+    cardKey.currentState._controller.reverse();
   }
 
   @override
   void dispose() {
     super.dispose();
-    Wakelock.disable();
-    exitFullScreen();
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    WidgetsBinding.instance.removeObserver(this);
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    if(state == AppLifecycleState.paused){
-    }
-    if(state == AppLifecycleState.resumed){
-      enterFullScreen(FullScreenMode.EMERSIVE_STICKY);
-    }
-    super.didChangeAppLifecycleState(state);
   }
 }

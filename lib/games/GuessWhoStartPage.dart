@@ -108,25 +108,31 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
                                 future: load,
                                 builder: (BuildContext context, AsyncSnapshot snapshot) {
                                   return CustomBox(
-                                    color: Colors.grey,
-                                    child: DropdownButton<List>(
-                                      hint: Text("Select category"),
-                                      iconEnabledColor: Colors.grey,
-                                      dropdownColor: Colors.grey,
-                                      items: _categories.map((description, value) {
-                                        return MapEntry(
-                                            description,
-                                            DropdownMenuItem<List>(
-                                              value: value,
-                                              child: Text(description,),
-                                            ));
-                                      }).values.toList(),
-                                      value: _listToPlay,
-                                      onChanged: (newValue) {
-                                        setState(() {
-                                          _listToPlay = newValue;
-                                        });
-                                      },
+                                    linearColor1: Colors.grey,
+                                    linearColor2: Colors.grey,
+                                    child: Padding(
+                                      padding: EdgeInsets.only(left: 10),
+                                      child: DropdownButtonHideUnderline(
+                                        child: DropdownButton<List>(
+                                          hint: Text("Select category"),
+                                          iconEnabledColor: Colors.grey,
+                                          dropdownColor: Colors.grey,
+                                          items: _categories.map((description, value) {
+                                            return MapEntry(
+                                                description,
+                                                DropdownMenuItem<List>(
+                                                  value: value,
+                                                  child: Text(description,),
+                                                ));
+                                          }).values.toList(),
+                                          value: _listToPlay,
+                                          onChanged: (newValue) {
+                                            setState(() {
+                                              _listToPlay = newValue;
+                                            });
+                                          },
+                                        ),
+                                      ),
                                     ),
                                   );
                                 }
@@ -152,7 +158,8 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
                           padding: const EdgeInsets.all(8.0),
                           child: CustomBox(
                             onTap: () => start(1, _scaffoldKey),
-                            color: Colors.blue[400],
+                            linearColor1: Colors.blue[400],
+                            linearColor2: Colors.blue[400],
                             child: getTeamWidget("Team 1", _teamOnePoints),
                           ),
                         ),
@@ -162,7 +169,8 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
                           padding: const EdgeInsets.all(8.0),
                           child: CustomBox(
                             onTap: () => start(2, _scaffoldKey),
-                            color: Colors.green[400],
+                            linearColor1: Colors.green[400],
+                            linearColor2: Colors.green[400],
                             child: getTeamWidget("Team 2", _teamTwoPoints),
                           ),
                         ),
@@ -178,7 +186,8 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
                           padding: const EdgeInsets.all(8.0),
                           child: CustomBox(
                             onTap: () => start(3, _scaffoldKey),
-                            color: Colors.orange[400],
+                            linearColor1: Colors.orange[400],
+                            linearColor2: Colors.orange[400],
                             child: getTeamWidget("Team 3", _teamThreePoints),
                           ),
                         ),
@@ -188,7 +197,8 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
                           padding: const EdgeInsets.all(8.0),
                           child: CustomBox(
                             onTap: () => start(4, _scaffoldKey),
-                            color: Colors.teal[400],
+                            linearColor1: Colors.teal[400],
+                            linearColor2: Colors.teal[400],
                             child: getTeamWidget("Team 4", _teamFourPoints),
                           ),
                         ),
@@ -279,6 +289,5 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
             )),
       );
     }, isScrollControlled: true);
-//    Navigator.push(context, MaterialPageRoute(builder: (context) => RulePage(text: text),));
   }
 }
