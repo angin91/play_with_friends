@@ -55,54 +55,57 @@ class _RingOfFireState extends State<RingOfFire> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     SwipeableWidgetController _cardController = SwipeableWidgetController();
     return Scaffold(
-      body: SafeArea(
-        child: FutureBuilder(
-          future: load,
-          builder:  (BuildContext context, AsyncSnapshot snapshot) {
-            return Column(
-              mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                if (currentCardIndex < cards.length)
-                  SwipeableWidget(
-                    cardController: _cardController,
-                    animationDuration: 200,
-                    horizontalThreshold: 0.85,
-                    scrollSensitivity: 4.5,
-                    child: cards[currentCardIndex],
-                    nextCards: <Widget>[
-                      // show next card
-                      // if there are no next cards, show nothing
-                      if (!(currentCardIndex + 1 >= cards.length))
-                        Align(
-                          alignment: Alignment.center,
-                          child: cards[currentCardIndex + 1],
-                        ),
-                    ],
-                    onLeftSwipe: () => swipeLeft(),
-                    onRightSwipe: () => swipeRight(),
-                  )
-                else
-                // if the deck is complete, add a button to reset deck
-                  Center(
-                    child: FlatButton(
-                      child: Text("Reset deck", style: TextStyle(color: Colors.white)),
-                      onPressed: () {
-                        setState(() {
-                          currentCardIndex = 0;
-                          currentKings = 0;
-                        });
-                      },
-                    ),
+      appBar: AppBar(
+        title: Text("Ring of Fire"),
+        elevation: 0,
+      ),
+      backgroundColor: const Color.fromRGBO(229, 229, 229, 1),
+      body: FutureBuilder(
+        future: load,
+        builder:  (BuildContext context, AsyncSnapshot snapshot) {
+          return Column(
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              if (currentCardIndex < cards.length)
+                SwipeableWidget(
+                  cardController: _cardController,
+                  animationDuration: 200,
+                  horizontalThreshold: 0.85,
+                  scrollSensitivity: 4.5,
+                  child: cards[currentCardIndex],
+                  nextCards: <Widget>[
+                    // show next card
+                    // if there are no next cards, show nothing
+                    if (!(currentCardIndex + 1 >= cards.length))
+                      Align(
+                        alignment: Alignment.center,
+                        child: cards[currentCardIndex + 1],
+                      ),
+                  ],
+                  onLeftSwipe: () => swipeLeft(),
+                  onRightSwipe: () => swipeRight(),
+                )
+              else
+              // if the deck is complete, add a button to reset deck
+                Center(
+                  child: FlatButton(
+                    child: Text("Reset deck"),
+                    onPressed: () {
+                      setState(() {
+                        currentCardIndex = 0;
+                        currentKings = 0;
+                      });
+                    },
                   ),
+                ),
 
-                // only show the card controlling buttons when there are cards
-                // otherwise, just hide it
-                if (currentCardIndex < cards.length)
-                  bottomSlide()
-              ],
-            );
-          },
-        ),
+              // only show the card controlling buttons when there are cards
+              // otherwise, just hide it
+              if (currentCardIndex < cards.length)
+                bottomSlide()
+            ],
+          );
+        },
       ),
     );
   }
@@ -165,16 +168,17 @@ class _RingOfFireState extends State<RingOfFire> with WidgetsBindingObserver {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(currentKings.toString() + "/4 ", style: TextStyle(color: Colors.white, fontSize: 20)),
+              Text(currentKings.toString() + "/4 ", style: TextStyle(fontSize: 20)),
               Padding(
                 padding: const EdgeInsets.only(right: 8),
-                child: Icon(CustomIcons.crown, color: Colors.white,),
+                child: Icon(CustomIcons.crown, color: Colors.black,),
               ),
+              SizedBox(width: 20,),
               Padding(
                 padding: const EdgeInsets.only(left: 8),
-                child: Text(currentCardIndex.toString() + "/52 ", style: TextStyle(color: Colors.white, fontSize: 20)),
+                child: Text(currentCardIndex.toString() + "/52 ", style: TextStyle(fontSize: 20)),
               ),
-              Icon(CustomIcons.hearts_card, color: Colors.white,)
+              Icon(CustomIcons.hearts_card, color: Colors.black,)
             ],
           ),
         ),
@@ -185,39 +189,42 @@ class _RingOfFireState extends State<RingOfFire> with WidgetsBindingObserver {
                 controller: _controller,
                 onPanelOpened: () => setState(() => _isOpen = true),
                 onPanelClosed: () => setState(() => _isOpen = false),
-                color: Colors.grey[900],
+                color: Colors.grey[400],
                 panelBuilder: (scrollController) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                        child: Container(
-                          height: 60,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Center(child: Text(cards[currentCardIndex].deckCard.task, style: TextStyle(fontSize: 40, color: Colors.grey[400]),)),
-                              Spacer(),
-                              Center(child: Icon(CustomIcons.help, color: Colors.grey[400],))
-                            ],
+                  return Opacity(
+                    opacity: 0.7,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                          child: Container(
+                            height: 60,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Center(child: Text(cards[currentCardIndex].deckCard.task, style: TextStyle(fontSize: 40),)),
+                                Spacer(),
+                                Center(child: Icon(CustomIcons.help,))
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(height: 10,),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8),
-                        child: Center(
-                          child: AutoSizeText(
-                            cards[currentCardIndex].deckCard.description,
-                            maxLines: 6,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 20, color: Colors.grey[400]),
+                        SizedBox(height: 10,),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          child: Center(
+                            child: AutoSizeText(
+                              cards[currentCardIndex].deckCard.description,
+                              maxLines: 6,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 20),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   );
                 },
                 maxHeight: MediaQuery.of(context).size.height * 0.35,

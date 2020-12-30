@@ -18,8 +18,23 @@ class ChallengeCard extends StatelessWidget {
         height: width,
         width: width * 0.8,
         decoration: BoxDecoration(
-          color: Colors.pink[200],
-          borderRadius: BorderRadius.all(Radius.circular(20))
+          gradient: LinearGradient(
+            begin: Alignment.bottomLeft,
+            end:
+            Alignment(0.9, 0.0), // 10% of the width, so there are ten blinds.
+            colors: [
+              Colors.yellow[900],
+              Colors.yellow[700]
+            ], // red to yellows
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              offset: Offset(5.0, 5.0), //(x,y)
+              blurRadius: 6.0,
+            ),
+          ],
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

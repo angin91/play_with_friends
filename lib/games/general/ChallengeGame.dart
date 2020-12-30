@@ -51,6 +51,11 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
   Widget build(BuildContext context) {
     SwipeableWidgetController _cardController = SwipeableWidgetController();
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Challenge game"),
+        elevation: 0,
+      ),
+      backgroundColor: const Color.fromRGBO(229, 229, 229, 1),
       body: SafeArea(
         child: FutureBuilder(
           future: load,
@@ -81,7 +86,7 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
                 // if the deck is complete, add a button to reset deck
                   Center(
                     child: FlatButton(
-                      child: Text("Reset deck", style: TextStyle(color: Colors.white)),
+                      child: Text("Reset deck", style: TextStyle(fontSize: 30)),
                       onPressed: () => setState(() => currentCardIndex = 0),
                     ),
                   ),
@@ -123,7 +128,7 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: CustomButton(
-              color: Colors.white,
+              color: Colors.yellow[800],
               onTap: () {
                 if(currentCardIndex >= 1) setState(() => currentCardIndex--);
               },
@@ -136,7 +141,7 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: CustomButton(
-              color: Colors.white,
+              color: Colors.yellow[800],
               onTap: () => cardController.triggerSwipeRight(),
               text: "Next",
             ),
