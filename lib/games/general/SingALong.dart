@@ -32,117 +32,120 @@ class _SingALongState extends State<SingALong> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(229, 229, 229, 1),
+      appBar: AppBar(
+        title: Text("Sing-a-Long"),
+        elevation: 0,
+      ),
       body: Center(
-        child: SafeArea(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text("\"" + widget.song.title + "\" by " + widget.song.artist,
-                  style: TextStyle(
-                      fontSize: 20
-                  ),
-                  textAlign: TextAlign.center,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("\"" + widget.song.title + "\" by " + widget.song.artist,
+                style: TextStyle(
+                    fontSize: 20
                 ),
+                textAlign: TextAlign.center,
               ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(40.0),
-                  child: Container(
-                    child: FlipCard(
-                      front: Card(
-                        color: Colors.white60,
-                        elevation: 10,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.0),
-                          side: BorderSide(
-                              color: Colors.black
-                          ),
-                        ),
-                        borderOnForeground: true,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Expanded(
-                                  flex: 2,
-                                  child: Text("Song",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  )
-                              ),
-                              Expanded(
-                                flex: 3,
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                                  child: Text(widget.song.lyric,
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(40.0),
+                child: Container(
+                  child: FlipCard(
+                    front: Card(
+                      color: Colors.white60,
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                        side: BorderSide(
+                            color: Colors.black
                         ),
                       ),
-                      back: Card(
-                        color: Colors.white60,
-                        elevation: 10,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.0),
-                          side: BorderSide(
-                              color: Colors.black
-                          ),
-                        ),
-                        borderOnForeground: true,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Expanded(
-                                  flex: 2,
-                                  child: Text("Solution",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  )
-                              ),
-                              Expanded(
-                                flex: 3,
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                                  child: Text(widget.song.solution,
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                    textAlign: TextAlign.center,
+                      borderOnForeground: true,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Expanded(
+                                flex: 2,
+                                child: Text("Song",
+                                  style: TextStyle(
+                                    fontSize: 20,
                                   ),
+                                  textAlign: TextAlign.center,
+                                )
+                            ),
+                            Expanded(
+                              flex: 3,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                                child: Text(widget.song.lyric,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                  textAlign: TextAlign.center,
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    back: Card(
+                      color: Colors.white60,
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                        side: BorderSide(
+                            color: Colors.black
+                        ),
+                      ),
+                      borderOnForeground: true,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Expanded(
+                                flex: 2,
+                                child: Text("Solution",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                )
+                            ),
+                            Expanded(
+                              flex: 3,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                                child: Text(widget.song.solution,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: CustomButton(
-                  text: "Back",
-                  onTap: _finish,
-                ),
-              )
-            ],
-          ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomButton(
+                text: "Back",
+                onTap: _finish,
+              ),
+            )
+          ],
         ),
       ),
     );

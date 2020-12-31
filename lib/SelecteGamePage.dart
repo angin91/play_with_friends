@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/GuessWhoStartPage.dart';
 import 'package:play_with_friends/Helper.dart';
 import 'package:play_with_friends/games/AlphabetGameStartPage.dart';
+import 'package:play_with_friends/games/GuessWhoStartPage.dart';
 import 'package:play_with_friends/games/general/ChallengeGame.dart';
 import 'package:play_with_friends/games/general/RingOfFire.dart';
+import 'package:play_with_friends/models/Game.dart';
 import 'package:play_with_friends/widgets/CustomBox.dart';
 
 import 'games/SingALongStartPage.dart';
@@ -21,10 +22,12 @@ class SelectGamePage extends StatefulWidget {
 
 class _SelectGamePageState extends State<SelectGamePage> {
   var helper;
+  List<Game> games = new List();
 
   @override
   void initState() {
     super.initState();
+    _setGameList();
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   }
@@ -33,23 +36,21 @@ class _SelectGamePageState extends State<SelectGamePage> {
     helper = new Helper();
   }
 
-  Map games = {
-    "Guess Who": GuessWhoStartPage(),
-    "Sing-a-Long": SingALongStartPage(),
-    "Alphabet game": AlphabetGameStartPage(),
-    "Challenge game": ChallengeGame(),
-    "Ring of Fire": RingOfFire()
-  };
+  _setGameList(){
+    games.add(Game("Guess Who", GuessWhoStartPage(), [GameTag.teamGame], Colors.teal[800], Colors.teal[400]));
+    games.add(Game("Sing-a-Long", SingALongStartPage(), [GameTag.teamGame], Colors.purple[800], Colors.purple[400]));
+    games.add(Game("Alphabet game", AlphabetGameStartPage(), [GameTag.drinkingGame], Colors.grey[800], Colors.grey[400]));
+    games.add(Game("Challenge game", ChallengeGame(), [GameTag.drinkingGame], Colors.yellow[900], Colors.yellow[700]));
+    games.add(Game("Ring of Fire", RingOfFire(), [GameTag.drinkingGame], Colors.blue[800], Colors.blue[400]));
+  }
 
-  Map drinkingGames = {
-    "Challenge game": ChallengeGame(),
-    "Ring of Fire": RingOfFire()
-  };
-  Map teamGames = {
-    "Guess Who": GuessWhoStartPage(),
-    "Sing-a-Long": SingALongStartPage(),
-    "Alphabet game": AlphabetGameStartPage()
-  };
+  // Map games = {
+  //   "Guess Who": GuessWhoStartPage(),
+  //   "Sing-a-Long": SingALongStartPage(),
+  //   "Alphabet game": AlphabetGameStartPage(),
+  //   "Challenge game": ChallengeGame(),
+  //   "Ring of Fire": RingOfFire()
+  // };
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +99,7 @@ class _SelectGamePageState extends State<SelectGamePage> {
       );
     }
     if (index == 1) {
-      return _buildCarousel(context, games.length, games);
+      return _buildCarousel(context, null);
     }
     if (index == 2) {
       return Padding(
@@ -114,7 +115,7 @@ class _SelectGamePageState extends State<SelectGamePage> {
       );
     }
     if (index == 3) {
-      return _buildCarousel(context, drinkingGames.length, drinkingGames);
+      return _buildCarousel(context, GameTag.drinkingGame);
     }
     if (index == 4) {
       return Padding(
@@ -130,12 +131,13 @@ class _SelectGamePageState extends State<SelectGamePage> {
       );
     }
     if (index == 5) {
-      return _buildCarousel(context, teamGames.length, teamGames);
+      return _buildCarousel(context, GameTag.teamGame);
     }
     return Container();
   }
 
-  Widget _buildCarousel(BuildContext context, int carouselLenght, Map games) {
+  Widget _buildCarousel(BuildContext context, GameTag tag) {
+    List<Game> games = getGamesWithTag(tag);
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Column(
@@ -144,71 +146,15 @@ class _SelectGamePageState extends State<SelectGamePage> {
           SizedBox(
             height: 300.0,
             child: PageView.builder(
-              itemCount: carouselLenght,
+              itemCount: games.length,
               controller: PageController(viewportFraction: 0.8),
               itemBuilder: (BuildContext context, int itemIndex) {
-                if (games.keys
-                    .elementAt(itemIndex)
-                    .toString()
-                    .contains("Sing-a-Long")) {
-                  return _buildCarouselItem(
-                      context,
-                      itemIndex,
-                      Colors.purple[800],
-                      Colors.purple[400],
-                      "Sing-a-Long",
-                      games.values.elementAt(itemIndex));
-                }
-                if (games.keys
-                    .elementAt(itemIndex)
-                    .toString()
-                    .contains("Ring of Fire")) {
-                  return _buildCarouselItem(
-                      context,
-                      itemIndex,
-                      Colors.blue[800],
-                      Colors.blue[400],
-                      "Ring of Fire",
-                      games.values.elementAt(itemIndex));
-                }
-                if (games.keys
-                    .elementAt(itemIndex)
-                    .toString()
-                    .contains("Challenge game")) {
-                  return _buildCarouselItem(
-                      context,
-                      itemIndex,
-                      Colors.yellow[900],
-                      Colors.yellow[700],
-                      "Challenge game",
-                      games.values.elementAt(itemIndex));
-                }
-                if (games.keys
-                    .elementAt(itemIndex)
-                    .toString()
-                    .contains("Guess Who")) {
-                  return _buildCarouselItem(
-                      context,
-                      itemIndex,
-                      Colors.teal[800],
-                      Colors.teal[400],
-                      "Guess Who",
-                      games.values.elementAt(itemIndex));
-                }
-                if (games.keys
-                    .elementAt(itemIndex)
-                    .toString()
-                    .contains("Alphabet game")) {
-                  return _buildCarouselItem(
-                      context,
-                      itemIndex,
-                      Colors.grey[800],
-                      Colors.grey[400],
-                      "Alphabet game",
-                      games.values.elementAt(itemIndex));
-                }
-                return _buildCarouselItem(context, itemIndex, Colors.green[800],
-                    Colors.green[400], "Test", null);
+                return _buildCarouselItem(
+                    context,
+                    games[itemIndex].color1,
+                    games[itemIndex].color2,
+                    games[itemIndex].title,
+                    games[itemIndex].game);
               },
             ),
           )
@@ -217,7 +163,7 @@ class _SelectGamePageState extends State<SelectGamePage> {
     );
   }
 
-  Widget _buildCarouselItem(BuildContext context, int itemIndex, Color color1,
+  Widget _buildCarouselItem(BuildContext context, Color color1,
       Color color2, String name, page) {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 8.0),
@@ -264,5 +210,18 @@ class _SelectGamePageState extends State<SelectGamePage> {
             MaterialPageRoute(builder: (context) => page),
           ),
         ));
+  }
+
+  List<Game> getGamesWithTag(GameTag tag) {
+    if(tag == null){
+      return games;
+    }
+    List<Game> newGameList = new List();
+    for(Game game in games){
+      if(game.hasTag(tag)){
+        newGameList.add(game);
+      }
+    }
+    return newGameList;
   }
 }

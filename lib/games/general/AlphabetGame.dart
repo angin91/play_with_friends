@@ -1,16 +1,9 @@
-import 'dart:async';
-
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:fullscreen/fullscreen.dart';
 import 'package:flutter/services.dart';
 import "dart:math";
-import 'package:aeyrium_sensor/aeyrium_sensor.dart';
 import 'package:play_with_friends/Helper.dart';
 import 'package:play_with_friends/models/custom_icons.dart';
-import 'package:play_with_friends/widgets/CustomButton.dart';
-import 'package:play_with_friends/widgets/CustomDeckCard.dart';
-import 'package:play_with_friends/widgets/CustomTimer.dart';
 import 'package:wakelock/wakelock.dart';
 
 class AlphabetGame extends StatefulWidget {
