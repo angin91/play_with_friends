@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:play_with_friends/games/AlphabetGameStartPage.dart';
-import 'package:play_with_friends/games/GuessWhoStartPage.dart';
+import 'package:play_with_friends/games/GuessWhoChooseCategory.dart';
 import 'package:play_with_friends/games/SingALongStartPage.dart';
 import 'package:play_with_friends/games/general/AlphabetGame.dart';
 import 'package:play_with_friends/games/general/ChallengeGame.dart';
@@ -24,12 +24,7 @@ class MyApp extends StatelessWidget {
         canvasColor: Colors.transparent,
       ),
      home: SelectGamePage(title: 'Play With Friends'),
-     // home: RingOfFire(),
-//      home: ChallengeGame(),
-//      home: GuessWhoStartPage(),
-//      home: AlphabetGameStartPage(),
-//       home: AlphabetGame(),
-//      home: SingALongStartPage(),
+     // home: GuessWhoChooseCategory(),
     );
   }
 

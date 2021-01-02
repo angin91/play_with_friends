@@ -71,6 +71,7 @@ flutter:
     - resource/challenges/
     - resource/cards/
     - resource/cards/images/
+    - resource/images/guess_who/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
