@@ -6,6 +6,7 @@ import 'package:play_with_friends/widgets/CustomBox.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:play_with_friends/widgets/CustomSelectionBox.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:styled_text/styled_text.dart';
 
 import '../Helper.dart';
 
@@ -27,6 +28,7 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
   int _teamTwoPoints = 0;
   int _teamThreePoints = 0;
   int _teamFourPoints = 0;
+  Color _color = Colors.pink;
   Future load;
 
   @override
@@ -80,7 +82,7 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
             GestureDetector(
               child: Icon(
                 CustomIcons.help_circled,
-                color: Colors.pink,
+                color: _color,
               ),
               onTap: () => getRule("resource/rules/guess_who_rules_swe"),
             ),
@@ -88,7 +90,7 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
               width: 10,
             ),
             GestureDetector(
-              child: Icon(Icons.remove_circle, color: Colors.pink,),
+              child: Icon(Icons.remove_circle, color: _color,),
               onTap: () => _resetPoints(),
             ),
             SizedBox(
@@ -213,7 +215,7 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
     if(_teamPlaying == teamPlaying){
       return CustomSelectionBox(
         color: Colors.white,
-        selectedColor: Colors.pink,
+        selectedColor: _color,
         selected: true,
         circular: 30,
         child: FittedBox(
@@ -224,9 +226,9 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("Team " + teamPlaying.toString(), style: TextStyle(
-                    fontSize: 30, color: Colors.pink),),
+                    fontSize: 30, color: _color),),
                 Text(points.toString(), style: TextStyle(
-                  fontSize: 50, color: Colors.pink),
+                  fontSize: 50, color: _color),
                 ),
               ],
             ),
@@ -259,6 +261,7 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
     );
   }
 
+
   void getRule(url) async {
     var text = await helper.getFileData(url);
 
@@ -266,7 +269,7 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Container(
-          height: MediaQuery.of(context).copyWith().size.height * 0.70,
+          height: MediaQuery.of(context).copyWith().size.height * 0.90,
           color: Colors.transparent,
           child: new Container(
               decoration: new BoxDecoration(
@@ -274,8 +277,35 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
                   borderRadius: new BorderRadius.only(
                       topLeft: const Radius.circular(20.0),
                       topRight: const Radius.circular(20.0))),
-              child: new Center(
-                child: new Text(text, textAlign: TextAlign.center,),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Row(
+                      children: [
+                        Spacer(),
+                        GestureDetector(
+                            onTap: () => Navigator.pop(context),
+                            child: Icon(Icons.close, color: _color, size: 35,)
+                        ),
+                      ],
+                    ),
+                  ),
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: StyledText(
+                        text: text,
+                        newLineAsBreaks: true,
+                        textAlign: TextAlign.center,
+                        styles: {
+                          "bold": TextStyle(fontWeight: FontWeight.bold),
+                          "header" : TextStyle(fontSize: 32)
+                        },
+                      ),
+                    ),
+                  ),
+                ],
               )),
         ),
       );

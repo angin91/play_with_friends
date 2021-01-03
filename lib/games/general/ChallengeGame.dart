@@ -4,6 +4,7 @@ import 'package:play_with_friends/models/Challenge.dart';
 import 'package:play_with_friends/widgets/ChallengeCard.dart';
 import 'package:play_with_friends/widgets/CustomButton.dart';
 import 'package:play_with_friends/widgets/CustomDeckCard.dart';
+import 'package:styled_text/styled_text.dart';
 import 'package:swipeable_card/swipeable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -21,6 +22,7 @@ class ChallengeGame extends StatefulWidget {
 class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserver {
   Helper helper;
   final _random = new Random();
+  Color _color = Colors.yellow;
   List<ChallengeCard> cards = new List<ChallengeCard>();
   int currentCardIndex = 0;
   Future load;
@@ -145,26 +147,6 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
         ),
       ],
     );
-  }
-
-  getRule(url) async {
-    var text = await helper.getFileData(url);
-
-    showModalBottomSheet(context: context, builder: (context) {
-      return Container(
-        height: MediaQuery.of(context).copyWith().size.height * 0.70,
-        color: Colors.transparent,
-        child: new Container(
-            decoration: new BoxDecoration(
-                color: Colors.white.withOpacity(0.9),
-                borderRadius: new BorderRadius.only(
-                    topLeft: const Radius.circular(20.0),
-                    topRight: const Radius.circular(20.0))),
-            child: new Center(
-              child: new Text(text, textAlign: TextAlign.center,),
-            )),
-      );
-    }, isScrollControlled: true);
   }
 
   @override

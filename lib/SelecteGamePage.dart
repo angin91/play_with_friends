@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:play_with_friends/Helper.dart';
-import 'package:play_with_friends/games/AlphabetGameStartPage.dart';
 import 'package:play_with_friends/games/GuessWhoChooseCategory.dart';
 import 'package:play_with_friends/games/general/ChallengeGame.dart';
 import 'package:play_with_friends/games/general/RingOfFire.dart';
+import 'package:play_with_friends/games/general/AlphabetGame.dart';
 import 'package:play_with_friends/games/general/SingALong.dart';
 import 'package:play_with_friends/models/Game.dart';
 import 'package:play_with_friends/widgets/CustomBox.dart';
@@ -36,9 +36,9 @@ class _SelectGamePageState extends State<SelectGamePage> {
   }
 
   _setGameList(){
-    games.add(Game("Guess Who", GuessWhoChooseCategory(), [GameTag.teamGame], Colors.teal[800], Colors.teal[400]));
+    games.add(Game("Guess Who", GuessWhoChooseCategory(), [GameTag.teamGame], Colors.pink[700], Colors.pink[300]));
     games.add(Game("Sing-a-Long", SingALong(), [GameTag.teamGame], Colors.purple[800], Colors.purple[400]));
-    games.add(Game("Alphabet game", AlphabetGameStartPage(), [GameTag.drinkingGame], Colors.grey[800], Colors.grey[400]));
+    games.add(Game("Alphabet game", AlphabetGame(), [GameTag.drinkingGame], Colors.grey[800], Colors.grey[400]));
     games.add(Game("Challenge game", ChallengeGame(), [GameTag.drinkingGame], Colors.yellow[900], Colors.yellow[700]));
     games.add(Game("Ring of Fire", RingOfFire(), [GameTag.drinkingGame], Colors.blue[800], Colors.blue[400]));
   }

@@ -1,5 +1,7 @@
-Guess who Regler
+<header><bold>Guess who - Regler</bold></header>
+
 
 Detta är ett spel som går ut på att du håller telefonen på pannan och ett namn kommer synas. Ditt lag kommer efter detta försöka förklara vem som är på din panna utan att säga det som står. Ifall du lyckats gissa rätt så vinklar du telefonen ner och får 1 poäng och det kommer upp ett nytt namn.
+
 
 Kan du inte så passar du genom att vinkla telefonen uppåt. Detta resulterar i ett minus poäng.

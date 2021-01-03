@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:play_with_friends/models/Song.dart';
 import 'package:play_with_friends/models/custom_icons.dart';
 import 'package:play_with_friends/widgets/CustomBox.dart';
+import 'package:styled_text/styled_text.dart';
 import 'package:wakelock/wakelock.dart';
 import 'package:play_with_friends/Helper.dart';
 
@@ -22,6 +23,7 @@ class _SingALongState extends State<SingALong> {
   List<Song> songs = new List();
   Song currentSong;
   Helper helper;
+  Color _color = Colors.purple;
   final _random = new Random();
   Future load;
 
@@ -72,7 +74,7 @@ class _SingALongState extends State<SingALong> {
           GestureDetector(
             child: Icon(
               CustomIcons.help_circled,
-              color: Colors.purple,
+              color: _color,
             ),
             onTap: () => getRule("resource/rules/sing_a_long_rules_swe"),
           ),
@@ -197,10 +199,6 @@ class _SingALongState extends State<SingALong> {
                         },
                         child: Center(child: Text("Next", style: TextStyle(color: Colors.white),)),
                       ),
-                      // child: CustomButton(
-                      //   text: "Back",
-                      //   onTap: () => _finish,
-                      // ),
                     )
                   ],
                 ),
@@ -217,6 +215,7 @@ class _SingALongState extends State<SingALong> {
     Wakelock.disable();
   }
 
+
   void getRule(url) async {
     var text = await helper.getFileData(url);
 
@@ -224,7 +223,7 @@ class _SingALongState extends State<SingALong> {
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Container(
-          height: MediaQuery.of(context).copyWith().size.height * 0.70,
+          height: MediaQuery.of(context).copyWith().size.height * 0.90,
           color: Colors.transparent,
           child: new Container(
               decoration: new BoxDecoration(
@@ -232,8 +231,35 @@ class _SingALongState extends State<SingALong> {
                   borderRadius: new BorderRadius.only(
                       topLeft: const Radius.circular(20.0),
                       topRight: const Radius.circular(20.0))),
-              child: new Center(
-                child: new Text(text, textAlign: TextAlign.center,),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Row(
+                      children: [
+                        Spacer(),
+                        GestureDetector(
+                            onTap: () => Navigator.pop(context),
+                            child: Icon(Icons.close, color: _color, size: 35,)
+                        ),
+                      ],
+                    ),
+                  ),
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: StyledText(
+                        text: text,
+                        newLineAsBreaks: true,
+                        textAlign: TextAlign.center,
+                        styles: {
+                          "bold": TextStyle(fontWeight: FontWeight.bold),
+                          "header" : TextStyle(fontSize: 32)
+                        },
+                      ),
+                    ),
+                  ),
+                ],
               )),
         ),
       );

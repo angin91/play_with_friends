@@ -5,6 +5,7 @@ import 'package:play_with_friends/games/GuessWhoStartPage.dart';
 import 'package:play_with_friends/models/custom_icons.dart';
 import 'package:play_with_friends/widgets/CustomBox.dart';
 import 'package:play_with_friends/widgets/CustomSelectionBox.dart';
+import 'package:styled_text/styled_text.dart';
 
 import '../Helper.dart';
 
@@ -18,6 +19,7 @@ class GuessWhoChooseCategory extends StatefulWidget {
 class _GuessWhoChooseCategoryState extends State<GuessWhoChooseCategory> {
   Helper helper;
   final Map<String, List> _categories = {};
+  Color _color = Colors.pink;
   Future load;
   int _selected;
 
@@ -64,7 +66,7 @@ class _GuessWhoChooseCategoryState extends State<GuessWhoChooseCategory> {
           GestureDetector(
             child: Icon(
               CustomIcons.help_circled,
-              color: Colors.pink,
+              color: _color,
             ),
             onTap: () => getRule("resource/rules/guess_who_rules_swe"),
           ),
@@ -110,13 +112,13 @@ class _GuessWhoChooseCategoryState extends State<GuessWhoChooseCategory> {
                                         circular: 10,
                                         height: 60,
                                         color: Colors.white,
-                                        selectedColor: Colors.pink,
+                                        selectedColor: _color,
                                         child: Center(
                                             child: Text(
                                           _categories.keys.elementAt(index),
                                           style: TextStyle(
                                               fontSize: 18,
-                                              color: Colors.pink,
+                                              color: _color,
                                               fontWeight: FontWeight.bold),
                                         )),
                                       )
@@ -174,7 +176,7 @@ class _GuessWhoChooseCategoryState extends State<GuessWhoChooseCategory> {
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Container(
-          height: MediaQuery.of(context).copyWith().size.height * 0.70,
+          height: MediaQuery.of(context).copyWith().size.height * 0.90,
           color: Colors.transparent,
           child: new Container(
               decoration: new BoxDecoration(
@@ -182,8 +184,35 @@ class _GuessWhoChooseCategoryState extends State<GuessWhoChooseCategory> {
                   borderRadius: new BorderRadius.only(
                       topLeft: const Radius.circular(20.0),
                       topRight: const Radius.circular(20.0))),
-              child: new Center(
-                child: new Text(text, textAlign: TextAlign.center,),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Row(
+                      children: [
+                        Spacer(),
+                        GestureDetector(
+                            onTap: () => Navigator.pop(context),
+                            child: Icon(Icons.close, color: _color, size: 35,)
+                        ),
+                      ],
+                    ),
+                  ),
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: StyledText(
+                        text: text,
+                        newLineAsBreaks: true,
+                        textAlign: TextAlign.center,
+                        styles: {
+                          "bold": TextStyle(fontWeight: FontWeight.bold),
+                          "header" : TextStyle(fontSize: 32)
+                        },
+                      ),
+                    ),
+                  ),
+                ],
               )),
         ),
       );
