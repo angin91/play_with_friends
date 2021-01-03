@@ -10,6 +10,12 @@ This is an application with a collection of games you can do at parties ect.
 Guess who
 - A game where you put the phone on your head and a person comes up. You as a team tries to explain to the person holding the phone.
 
+Challange game
+ - A drinking game where you and your friends get challenges to complete or questions to answer
+ 
+Ring of fire
+ - A drinking game where you and your friends draw cards and do different things depending on the card
+ 
 ### Games todo
 Charades/Pictionary
  - The classic games where you get a word and will try to explain it to the others using either charades or draw it
@@ -22,7 +28,4 @@ Sing-a-long
 
 Point game
  - There will be a statement and everyone points to the person that it reflects the most
-
-Piccolo
- - A drinking game where you and your friends get challenges to complete or questions to answer
 
