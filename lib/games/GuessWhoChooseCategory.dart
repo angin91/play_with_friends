@@ -70,7 +70,7 @@ class _GuessWhoChooseCategoryState extends State<GuessWhoChooseCategory> {
           ),
         ],
       ),
-      backgroundColor: const Color.fromRGBO(229, 229, 229, 1),
+      backgroundColor: const Color.fromRGBO(241, 233, 218, 1),
       body: FutureBuilder(
         future: load,
         builder: (BuildContext context, AsyncSnapshot snapshot) {
@@ -170,26 +170,23 @@ class _GuessWhoChooseCategoryState extends State<GuessWhoChooseCategory> {
   void getRule(url) async {
     var text = await helper.getFileData(url);
 
-    showModalBottomSheet(
-        context: context,
-        builder: (context) {
-          return Container(
-            height: MediaQuery.of(context).copyWith().size.height * 0.70,
-            color: Colors.transparent,
-            child: new Container(
-                decoration: new BoxDecoration(
-                    color: Colors.white.withOpacity(0.9),
-                    borderRadius: new BorderRadius.only(
-                        topLeft: const Radius.circular(20.0),
-                        topRight: const Radius.circular(20.0))),
-                child: new Center(
-                  child: new Text(
-                    text,
-                    textAlign: TextAlign.center,
-                  ),
-                )),
-          );
-        },
-        isScrollControlled: true);
+    showModalBottomSheet(context: context, builder: (context) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Container(
+          height: MediaQuery.of(context).copyWith().size.height * 0.70,
+          color: Colors.transparent,
+          child: new Container(
+              decoration: new BoxDecoration(
+                  color: Colors.white.withOpacity(0.9),
+                  borderRadius: new BorderRadius.only(
+                      topLeft: const Radius.circular(20.0),
+                      topRight: const Radius.circular(20.0))),
+              child: new Center(
+                child: new Text(text, textAlign: TextAlign.center,),
+              )),
+        ),
+      );
+    }, isScrollControlled: true);
   }
 }

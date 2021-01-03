@@ -20,8 +20,10 @@ class CustomBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(circular),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(circular),
+        ),
         child: Container(
           margin: const EdgeInsets.only(bottom: 6.0, right: 6.0),
           decoration: BoxDecoration(

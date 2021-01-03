@@ -47,12 +47,12 @@ class _SelectGamePageState extends State<SelectGamePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-          color: const Color.fromRGBO(229, 229, 229, 1),
+          color: const Color.fromRGBO(241, 233, 218, 1),
           child: CustomScrollView(
             slivers: [
               SliverAppBar(
                 flexibleSpace: Container(
-                  color: const Color.fromRGBO(229, 229, 229, 1),
+                  color: const Color.fromRGBO(241, 233, 218, 1),
                   child: Center(
                     child: Text(
                       "Pick a game!",
@@ -79,14 +79,13 @@ class _SelectGamePageState extends State<SelectGamePage> {
     if (index == 0) {
       return Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Opacity(
-            opacity: 0.7,
-            child: Text(
-              "ALL GAMES",
-              style: TextStyle(
-                fontSize: 22,
-              ),
-            )),
+        child: Text(
+          "ALL GAMES",
+          style: TextStyle(
+            fontSize: 22,
+            color: Colors.black.withOpacity(0.6)
+          ),
+        ),
       );
     }
     if (index == 1) {
@@ -95,14 +94,13 @@ class _SelectGamePageState extends State<SelectGamePage> {
     if (index == 2) {
       return Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Opacity(
-            opacity: 0.7,
-            child: Text(
-              "DRINKING GAMES",
-              style: TextStyle(
-                fontSize: 22,
-              ),
-            )),
+        child: Text(
+          "DRINKING GAMES",
+          style: TextStyle(
+              fontSize: 22,
+              color: Colors.black.withOpacity(0.6)
+          ),
+        ),
       );
     }
     if (index == 3) {
@@ -111,14 +109,13 @@ class _SelectGamePageState extends State<SelectGamePage> {
     if (index == 4) {
       return Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Opacity(
-            opacity: 0.7,
-            child: Text(
-              "TEAM-GAMES",
-              style: TextStyle(
-                fontSize: 22,
-              ),
-            )),
+        child: Text(
+          "TEAM-GAMES",
+          style: TextStyle(
+              fontSize: 22,
+              color: Colors.black.withOpacity(0.6)
+          ),
+        ),
       );
     }
     if (index == 5) {

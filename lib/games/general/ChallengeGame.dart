@@ -55,7 +55,7 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
         title: Text("Challenge game"),
         elevation: 0,
       ),
-      backgroundColor: const Color.fromRGBO(229, 229, 229, 1),
+      backgroundColor: const Color.fromRGBO(241, 233, 218, 1),
       body: SafeArea(
         child: FutureBuilder(
           future: load,

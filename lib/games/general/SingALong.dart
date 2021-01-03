@@ -64,7 +64,7 @@ class _SingALongState extends State<SingALong> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(229, 229, 229, 1),
+      backgroundColor: const Color.fromRGBO(241, 233, 218, 1),
       appBar: AppBar(
         title: Text("Sing-a-Long"),
         elevation: 0,

@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         // is not restarted.
         fontFamily: "Space Grotesk",
-        primarySwatch: createMaterialColor(const Color.fromRGBO(229, 229, 229, 1)),
+        primarySwatch: createMaterialColor(const Color.fromRGBO(241, 233, 218, 1)),
         visualDensity: VisualDensity.adaptivePlatformDensity,
         canvasColor: Colors.transparent,
       ),

@@ -96,7 +96,7 @@ class _GuessWhoStartPageState extends State<GuessWhoStartPage> {
             ),
           ],
         ),
-        backgroundColor: const Color.fromRGBO(229, 229, 229, 1),
+        backgroundColor: const Color.fromRGBO(241, 233, 218, 1),
         body: Container(
           child: Column(
             children: [

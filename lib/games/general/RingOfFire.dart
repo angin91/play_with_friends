@@ -59,7 +59,7 @@ class _RingOfFireState extends State<RingOfFire> with WidgetsBindingObserver {
         title: Text("Ring of Fire"),
         elevation: 0,
       ),
-      backgroundColor: const Color.fromRGBO(229, 229, 229, 1),
+      backgroundColor: const Color.fromRGBO(241, 233, 218, 1),
       body: FutureBuilder(
         future: load,
         builder:  (BuildContext context, AsyncSnapshot snapshot) {
@@ -187,7 +187,7 @@ class _RingOfFireState extends State<RingOfFire> with WidgetsBindingObserver {
                 controller: _controller,
                 onPanelOpened: () => setState(() => _isOpen = true),
                 onPanelClosed: () => setState(() => _isOpen = false),
-                color: Colors.grey[400],
+                color: Colors.brown[100],
                 panelBuilder: (scrollController) {
                   return Opacity(
                     opacity: 0.7,
