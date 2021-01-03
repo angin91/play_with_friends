@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:fullscreen/fullscreen.dart';
 import 'package:flutter/services.dart';
 import "dart:math";
 import 'package:aeyrium_sensor/aeyrium_sensor.dart';
@@ -18,7 +17,6 @@ class GuessWho extends StatefulWidget {
 }
 
 class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
-  FullScreen fullscreen;
   final _random = new Random();
 
   List gameList;
@@ -43,9 +41,8 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
   void initState() {
     super.initState();
     gameList = widget.list;
-    fullscreen = new FullScreen();
     Wakelock.enable();
-    enterFullScreen(FullScreenMode.EMERSIVE_STICKY);
+    SystemChrome.setEnabledSystemUIOverlays([]);
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.landscapeRight, DeviceOrientation.landscapeLeft]);
     WidgetsBinding.instance.addObserver(this);
@@ -58,14 +55,6 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
     _streamSubscriptions = AeyriumSensor.sensorEvents.listen((event) {
       _passOrGood(event);
     });
-  }
-
-  void enterFullScreen(FullScreenMode fullScreenMode) async {
-    await fullscreen.enterFullScreen(fullScreenMode);
-  }
-
-  void exitFullScreen() async {
-    await fullscreen.exitFullScreen();
   }
 
   @override
@@ -132,7 +121,6 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
         _waiting = true;
         _points++;
         gameList.removeAt(_currentIndex);
-        print(gameList.length);
         if(gameList.length < 1){
           _finish();
         }
@@ -152,7 +140,6 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
         _waiting = true;
         _points--;
         gameList.removeAt(_currentIndex);
-        print(gameList.length);
         if(gameList.length < 1){
           _finish();
         }
@@ -171,7 +158,7 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
   void dispose() {
     super.dispose();
     Wakelock.disable();
-    exitFullScreen();
+    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     if (_streamSubscriptions != null) {
       _streamSubscriptions.cancel();
@@ -188,7 +175,7 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
     if(state == AppLifecycleState.paused){
     }
     if(state == AppLifecycleState.resumed){
-      enterFullScreen(FullScreenMode.EMERSIVE_STICKY);
+      SystemChrome.setEnabledSystemUIOverlays([]);
     }
     super.didChangeAppLifecycleState(state);
   }

@@ -104,16 +104,12 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
   }
 
   void swipeLeft() {
-    print("left");
-
-    // NOTE: it is your job to change the card
     setState(() {
       currentCardIndex++;
     });
   }
 
   void swipeRight() {
-    print("right");
     setState(() {
       currentCardIndex++;
     });

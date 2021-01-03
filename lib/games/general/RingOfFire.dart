@@ -111,12 +111,10 @@ class _RingOfFireState extends State<RingOfFire> with WidgetsBindingObserver {
   }
 
   void swipeLeft() {
-    print("left");
     nextCard(context);
   }
 
   void swipeRight() {
-    print("right");
     nextCard(context);
   }
 
