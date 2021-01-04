@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class BaseAlertTextDialog extends StatelessWidget {
 
-  Color _color = Color.fromARGB(220, 117, 218 ,255);
+  Color _color = Colors.white;
 
   String _title;
   String _yes;
@@ -28,7 +28,7 @@ class BaseAlertTextDialog extends StatelessWidget {
         autofocus: true,
         controller: _controller,
         decoration: new InputDecoration(
-            labelText: 'Full Name', hintText: 'eg. John Smith'),
+            labelText: 'Name', hintText: 'eg. John Smith'),
       ),
       backgroundColor: this._color,
       shape:
@@ -36,7 +36,7 @@ class BaseAlertTextDialog extends StatelessWidget {
       actions: <Widget>[
         FlatButton(
           child: Text(this._yes),
-          textColor: Colors.greenAccent,
+          textColor: Colors.green,
           onPressed: () {
             this._yesOnPressed();
           },

@@ -3,872 +3,1220 @@
     {
       "title" : "Shot!",
       "challenge" : "Du måste shotta!",
-      "number" : "01"
+      "number" : "01",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Sansung-användare",
       "challenge" : "Alla som har en samsung-telefon måste dricka",
-      "number" : "02"
+      "number" : "02",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Iphone-användare",
       "challenge" : "Alla som har en Iphone måste dricka",
-      "number" : "03"
+      "number" : "03",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "HTC-Användare",
       "challenge" : "Alla som har en HTC-telefon måste dricka",
-      "number" : "04"
+      "number" : "04",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Sony-användare",
       "challenge" : "Alla som har en Sony-telefon måste dricka",
-      "number" : "05"
+      "number" : "05",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "LG-Användare",
       "challenge" : "Alla som har en LG-telefon måste dricka",
-      "number" : "06"
+      "number" : "06",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Skål!",
       "challenge" : "Alla måste dricka",
-      "number" : "07"
+      "number" : "07",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Vattenfall",
       "challenge" : "Alla måste dricka och man får inte sluta förrän spelaren till höger har slutat. Spelaren som fick kortet måste vara den första som slutar",
-      "number" : "08"
+      "number" : "08",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Guys",
       "challenge" : "Alla killar måste dricka",
-      "number" : "09"
+      "number" : "09",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Business class",
       "challenge" : "Alla som har på sig en skjorta måste dricka",
-      "number" : "10"
+      "number" : "10",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
      },
     {
       "title" : "Cool kids",
       "challenge" : "Alla som har på sig en keps måste dricka",
-      "number" : "11"
+      "number" : "11",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Brudar",
       "challenge" : "Alla tjejer måste dricka",
-      "number" : "12"
+      "number" : "12",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Watch out!",
       "challenge" : "Alla som har en klocka på sig måste dricka",
-      "number" : "13"
+      "number" : "13",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Vänster",
       "challenge" : "Spelaren till vänster om dig måste dricka",
-      "number" : "14"
+      "number" : "14",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Höger",
       "challenge" : "Spelaren till höger om dig måste dricka",
-      "number" : "15"
+      "number" : "15",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Vänsterhänta",
       "challenge" : "Alla vänsterhänta måste dricka",
-      "number" : "16"
+      "number" : "16",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Tvärs över",
       "challenge" : "Spelaren mitt emot dig måste dricka",
-      "number" : "17"
+      "number" : "17",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Högerhänta",
       "challenge" : "Alla högerhänta måste dricka",
-      "number" : "18"
+      "number" : "18",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Grannfejden",
       "challenge" : "Dina grannar måste dricka (höger och vänster)",
-      "number" : "19"
+      "number" : "19",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Readheads",
       "challenge" : "Alla rödhåriga måste dricka",
-      "number" : "20"
-     },
+      "number" : "20",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
+    },
     {
       "title" : "Blondes",
       "challenge" : "Alla blonda måste dricka",
-      "number" : "21"
+      "number" : "21",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Brunettes",
       "challenge" : "Alla brunetter måste dricka",
-      "number" : "22"
+      "number" : "22",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Crazy cat lady",
-      "challenge" : "Spelaren med flest husdjur måste dricka",
-      "number" : "23"
+      "challenge" : "Spelaren med flest husdjur måste dricka, har ingen husdjur måste alla dricka",
+      "number" : "23",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Suit up!",
       "challenge" : "Alla som har på sig en kostym eller blazer måste dricka",
-      "number" : "24"
+      "number" : "24",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "A la votre!",
       "challenge" : "Alla som kan franska måste dricka",
-      "number" : "25"
+      "number" : "25",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Prost!",
       "challenge" : "Alla som kan tyska måste dricka",
-      "number" : "26"
+      "number" : "26",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Cin cin!",
       "challenge" : "Alla som kan italienska måste dricka",
-      "number" : "27"
+      "number" : "27",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Salud!",
       "challenge" : "Alla som kan spanska måste dricka",
-      "number" : "28"
+      "number" : "28",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Skål!",
       "challenge" : "Alla som kan svenska måste dricka. Skål!",
-      "number" : "29"
+      "number" : "29",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Globetrotters",
       "challenge" : "Alla som har besökt minst 3 kontinenter måste dricka",
-      "number" : "30"
-     },
+      "number" : "30",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
+    },
     {
       "title" : "USA",
       "challenge" : "Alla som varit i USA måste dricka",
-      "number" : "31"
+      "number" : "31",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Vintern",
       "challenge" : "Alla som är födda på vintern måste dricka",
-      "number" : "32"
+      "number" : "32",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Sommaren",
       "challenge" : "Alla som är födda på sommaren måste dricka",
-      "number" : "33"
+      "number" : "33",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Våren",
       "challenge" : "Alla som är födda på våren måste dricka",
-      "number" : "34"
+      "number" : "34",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Hösten",
       "challenge" : "Alla som är födda på hösten måste dricka",
-      "number" : "35"
+      "number" : "35",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Klunka!",
       "challenge" : "Spelaren med minst i sitt glas måste dricka upp det!",
-      "number" : "36"
+      "number" : "36",
+      "drinks" : 1,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Tattoo",
       "challenge" : "Alla med en tatuering måste dricka",
-      "number" : "37"
+      "number" : "37",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Utjämnaren",
       "challenge" : "Alla måste dricka tills deras glas är halvfullt (eller halvtomt). Om man bara har hälften kvar eller mindre är man säker",
-      "number" : "38"
+      "number" : "38",
+      "drinks" : 1,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Refill!",
-      "challenge" : "Drick upp din dricka och fyll på den",
-      "number" : "39"
+      "challenge" : "Drick upp ditt dricka och fyll på den",
+      "number" : "39",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Jämnt",
       "challenge" : "Alla som är födda på ett jämnt datum måste dricka",
-      "number" : "40"
-     },
+      "number" : "40",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
+    },
     {
       "title" : "Liten blåsa",
       "challenge" : "Alla som har varit på toaletten sen spelet började måste dricka",
-      "number" : "41"
+      "number" : "41",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "OJOJ!",
       "challenge" : "Spelaren till vänster får välja vad du ska shotta!",
-      "number" : "42"
+      "number" : "42",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Frikort",
       "challenge" : "Du har möjlighet att hoppa över ett uppdrag, men bara en gång",
-      "number" : "43"
+      "number" : "43",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Korstast",
       "challenge" : "Den kortaste spelaren måste dricka",
-      "number" : "44"
+      "number" : "44",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Hög",
       "challenge" : "Den längsta spelaren måste dricka",
-      "number" : "45"
+      "number" : "45",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Vita strumpor",
       "challenge" : "Alla som har vita strumpor på sig måste dricka",
-      "number" : "46"
+      "number" : "46",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Svarta strumpor",
       "challenge" : "Alla som har svarta strumpor på sig måste dricka",
-      "number" : "47"
+      "number" : "47",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Färgglada strumpor",
       "challenge" : "Alla som har färgglada strumpor på sig måste dricka",
-      "number" : "48"
+      "number" : "48",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Clown",
       "challenge" : "Peka ut den största clownen i rummet. Han eller hon måste dricka",
-      "number" : "49"
+      "number" : "49",
+      "drinks" : 1,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Gör om, Gör rätt",
       "challenge" : "Den sista personen som drack måste dricka igen",
-      "number" : "50"
-     },
+      "number" : "50",
+      "drinks" : 1,
+      "isPersonalChallenge" : false
+    },
     {
       "title" : "Biff",
       "challenge" : "Alla som tränar på gym måste dricka",
-      "number" : "51"
+      "number" : "51",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Zlatan",
       "challenge" : "Alla som spelar/har spelat fotboll måste dricka",
-      "number" : "52"
+      "number" : "52",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Forsberg",
       "challenge" : "Alla som spelar/har spelat hockey måste dricka",
-      "number" : "53"
+      "number" : "53",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Flickvän",
       "challenge" : "Alla med en flickvän måste dricka",
-      "number" : "54"
+      "number" : "54",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Rollin",
       "challenge" : "Alla som brukar åka skateboard eller longboard måste dricka",
-      "number" : "55"
+      "number" : "55",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Pojkvän",
       "challenge" : "Alla med en pojkvän måste dricka",
-      "number" : "56"
+      "number" : "56",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Högerfotade",
       "challenge" : "Alla som är högerfotade måste dricka",
-      "number" : "57"
+      "number" : "57",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Vänsterfotade",
       "challenge" : "Alla som är vänsterfotade måste dricka",
-      "number" : "58"
+      "number" : "58",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Snurra flaskan",
       "challenge" : "Snurra flaskan och se vem den pekar på, den måste dricka",
-      "number" : "59"
+      "number" : "59",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Rökare",
       "challenge" : "Alla rökare måste dricka",
-      "number" : "60"
-     },
+      "number" : "60",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
+    },
     {
       "title" : "Ickerökare",
       "challenge" : "Alla som inte röker måste dricka",
-      "number" : "61"
+      "number" : "61",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Snusare",
       "challenge" : "Alla som snusar måste dricka",
-      "number" : "62"
+      "number" : "62",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Öl",
       "challenge" : "Alla som föredrar öl, ta en klunk",
-      "number" : "63"
+      "number" : "63",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Cider",
       "challenge" : "Alla som föredrar cider, ta en klunk",
-      "number" : "64"
+      "number" : "64",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Vin",
       "challenge" : "Alla som föredrar vin, ta en klunk",
-      "number" : "65"
+      "number" : "65",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Starksprit",
       "challenge" : "Alla som föredrar starksprit, ta en klunk",
-      "number" : "66"
+      "number" : "66",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Men vem kör egentligen?",
       "challenge" : "Alla med ett körkort måste dricka",
-      "number" : "67"
+      "number" : "67",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "TUT TUT!",
-      "challenge" : "Alla som äger en vil måste dricka. Om det inte finns någon som äger en bil måste alla dricka",
-      "number" : "68"
+      "challenge" : "Alla som äger en bil måste dricka. Om det inte finns någon som äger en bil måste alla dricka",
+      "number" : "68",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Motorcykel",
       "challenge" : "Alla som äger en motorcykel måste dricka. Om det inte finns någon som äger en motorcykel måste alla dricka",
-      "number" : "69"
+      "number" : "69",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Båt",
       "challenge" : "Alla som äger en båt måste dricka. Om det inte finns någon som äger en båt måste alla dricka",
-      "number" : "70"
-     },
+      "number" : "70",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
+    },
     {
       "title" : "Nya vänner",
       "challenge" : "De som du inte känt mer än två veckor måste dricka",
-      "number" : "71"
+      "number" : "71",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Vad har du i glaset?",
       "challenge" : "Om du har vodka i ditt glas, drick!",
-      "number" : "72"
+      "number" : "72",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Vad har du i glaset?",
       "challenge" : "Om du har rom i ditt glas, drick!",
-      "number" : "73"
+      "number" : "73",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Vad har du i glaset?",
       "challenge" : "Om du har whisky i ditt glas, drick!",
-      "number" : "74"
+      "number" : "74",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Vad har du i glaset?",
       "challenge" : "Om du har tequila i ditt glas, drick!",
-      "number" : "75"
+      "number" : "75",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Vad har du i glaset?",
       "challenge" : "Om du har gin i ditt glas, drick!",
-      "number" : "76"
+      "number" : "76",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Vad har du i glaset?",
       "challenge" : "Om du har cognac i ditt glas, drick!",
-      "number" : "77"
+      "number" : "77",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Vad har du i glaset?",
       "challenge" : "Om du har cider i ditt glas, drick!",
-      "number" : "78"
+      "number" : "78",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Vad har du i glaset?",
       "challenge" : "Om du har öl i ditt glas, drick!",
-      "number" : "79"
+      "number" : "79",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Vad har du i glaset?",
       "challenge" : "Om du har vin i ditt glas, drick!",
-      "number" : "80"
-     },
+      "number" : "80",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
+    },
     {
       "title" : "Vad har du i glaset?",
       "challenge" : "Om du har alkoholfritt i ditt glas, drick!",
-      "number" : "81"
+      "number" : "81",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Gul dryck",
       "challenge" : "Om din dryck är gulaktig måste du dricka",
-      "number" : "82"
+      "number" : "82",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Röd dryck",
       "challenge" : "Om din dryck är rödaktig måste du dricka",
-      "number" : "83"
+      "number" : "83",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Blå dryck",
       "challenge" : "Om din dryck är blåaktig måste du dricka",
-      "number" : "84"
+      "number" : "84",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Mörk dryck",
       "challenge" : "Om din drink är svart eller brun måste du dricka",
-      "number" : "85"
+      "number" : "85",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Glasklart",
       "challenge" : "Om din dryck är genomskinlig måste du dricka",
-      "number" : "86"
+      "number" : "86",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Korvfest",
       "challenge" : "Om det är fler killar i rummet än tjejer måste tjejerna dricka",
-      "number" : "87"
+      "number" : "87",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Bullfest",
       "challenge" : "Om det är fler tjejer i rummet än killar måste killarna dricka",
-      "number" : "88"
+      "number" : "88",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Skräddare",
       "challenge" : "De som sitter med benen i kors måste dricka",
-      "number" : "89"
+      "number" : "89",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Raka ben",
       "challenge" : "Alla som inte sitter med benen i kors måste dricka",
-      "number" : "90"
-     },
+      "number" : "90",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
+    },
     {
       "title" : "After eight",
       "challenge" : "Om klockan är efter åtta måste alla dricka",
-      "number" : "91"
+      "number" : "91",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Hitta en tärning",
-      "challenge" : "Om det finns en tärning nära till hands ska du kasta den en gång. Blir det tre eller mindre måste du dricka. Finns ingen tärning i närheten måste du dricka två gånger",
-      "number" : "92"
+      "challenge" : "Om det finns en tärning nära till hands ska du kasta den en gång. Blir det tre eller mindre måste du dricka. Finns ingen tärning i närheten måste du dricka dubbelt",
+      "number" : "92",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Jämn ålder",
       "challenge" : "Alla med en jämn ålder måste dricka",
-      "number" : "93"
+      "number" : "93",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Udda ålder",
       "challenge" : "Alla med en udda ålder måste dricka",
-      "number" : "94"
+      "number" : "94",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Runt om",
-      "challenge" : "Om dina två grannar är av samma kön, drick två gånger, annars en",
-      "number" : "95"
+      "challenge" : "Om dina två grannar är av samma kön, drick!",
+      "number" : "95",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Runt om",
-      "challenge" : "Om du sitter bredvid två tjejer måste du dricka två gånger, annars en",
-      "number" : "96"
+      "challenge" : "Om du sitter bredvid två tjejer måste du dricka",
+      "number" : "96",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Runt om",
-      "challenge" : "Om du sitter bredvid två killar måste du dricka två gånger, annars en",
-      "number" : "97"
+      "challenge" : "Om du sitter bredvid två killar måste du dricka!",
+      "number" : "97",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Ojämnställt",
       "challenge" : "Det kön med minst representanter i rummet måste dricka",
-      "number" : "98"
+      "number" : "98",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Ninja",
       "challenge" : "De spelare som inte har fått i uppdrag att dricka under spelet måste nu dricka",
-      "number" : "99"
+      "number" : "99",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Slim fit",
       "challenge" : "Den med tajtast byxor i rummet måste dricka",
-      "number" : "100"
-     },
+      "number" : "100",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
+    },
     {
       "title" : "Drick!",
-      "challenge" : "Den som drog detta kort måste dricka. Du måste dricka. När detta kortet dras måste den som håller telefonen dricka. Drick!",
-      "number" : "101"
+      "challenge" : "Den som drog detta kort måste dricka. Du måste dricka. Drick!",
+      "number" : "101",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Look-alike",
       "challenge" : "Om du och den som sitter bredvid dig har liknande hårfärg måste ni dricka",
-      "number" : "102"
+      "number" : "102",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Rapunzel",
       "challenge" : "Personen med längst hår, ska från och med nu kallas rapunzel. Om någon kallar hen dennes riktiga namn måste man dricka",
-      "number" : "103"
+      "number" : "103",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Sportfåne",
       "challenge" : "Alla med långa vita strumpor måste göra armhävningar",
-      "number" : "104"
+      "number" : "104",
+      "drinks" : 0,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Rim",
       "challenge" : "Du startar med att säga ett ord som personen till höger ska rimma på, fortsätt tills dess att någon tvekar, skrattar eller inte lyckas rimma. Den som misslyckas måste dricka",
-      "number" : "105"
+      "number" : "105",
+      "drinks" : 4,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Luke, I am your father",
       "challenge" : "Gör en imitation av Darth Vader. Dina medspelare avgör om du lyckats eller ej",
-      "number" : "106"
+      "number" : "106",
+      "drinks" : 3,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Shaken not stirred",
       "challenge" : "Gör en imitation av James Bond. Dina medspelare avgör om du lyckas eller ej",
-      "number" : "107"
+      "number" : "107",
+      "drinks" : 3,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "DOH!",
       "challenge" : "Gör en imitation av Homer Simpsons. Dina medspelare avgör om du lyckats eller ej",
-      "number" : "108"
+      "number" : "108",
+      "drinks" : 3,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Gigidy Gigidy",
       "challenge" : "Gör en imitation av Quagmire. Dina medspelare avgör om du lyckats eller ej",
-      "number" : "109"
+      "number" : "109",
+      "drinks" : 3,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Snövit",
       "challenge" : "Namnge fem av de sju dvärgarna",
-      "number" : "110"
-     },
+      "number" : "110",
+      "drinks" : 5,
+      "isPersonalChallenge" : true
+    },
     {
       "title" : "You shall not pass",
       "challenge" : "Gör en imitation av Gandalf. Dina medspelare avgör om du lyckas eller ej",
-      "number" : "111"
+      "number" : "111",
+      "drinks" : 3,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Vem släckte ljuset?",
-      "challenge" : "Blunda tills det är din tur igen",
-      "number" : "112"
+      "challenge" : "Blunda tills det är din tur igen, för varje gång du tittar måste du dricka",
+      "number" : "112",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Striptease",
       "challenge" : "Ta av två klädesplagg",
-      "number" : "113"
+      "number" : "113",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
     },
     {
-      "title" : "Gå vidare",
-      "challenge" : "Hoppa över de nästa två spelarna och fortsätt sedan som vanligt",
-      "number" : "114"
+      "title" : "Reverse",
+      "challenge" : "Utse någon som inte behöver dricka (inte dig själv). Alla andra dricker",
+      "number" : "114",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Vilket avslut",
-      "challenge" : "Avsluta varje mening med ett ord de andra i gruppen väljer åt dig",
-      "number" : "115"
+      "challenge" : "Avsluta varje mening med ett ord de andra i gruppen väljer åt dig. Gör du inte det dricker du",
+      "number" : "115",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Varsågod",
       "challenge" : "Blanda en drick till spelaren åt vänster",
-      "number" : "116"
+      "number" : "116",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Buhhhh!",
       "challenge" : "Skräm spelaren till höger om dig",
-      "number" : "117"
+      "number" : "117",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Arghhh!",
-      "challenge" : "Du måste prata som en pirat tills nästa runda. De andra spelarna får rösta om du klarat det",
-      "number" : "118"
+      "challenge" : "Du måste prata som en pirat tills din nästa tur. Misslyckas du dricker du",
+      "number" : "118",
+      "drinks" : 3,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Armbrytning",
       "challenge" : "Utmana spelaren mitt emot dig i armbrytning. Förloraren måste dricka",
-      "number" : "119"
+      "number" : "119",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Sångare",
-      "challenge" : "Du måste nu sjucnga allting du ska säga. Varje gång du misslyckas eller glömmer bort att sjunga måste du dricka. Detta uppdraget gäller tills det är din tur igen",
-      "number" : "120"
-     },
+      "challenge" : "Du måste nu sjunga allting du ska säga. Varje gång du misslyckas eller glömmer bort att sjunga måste du dricka. Detta uppdraget gäller tills det är din tur igen",
+      "number" : "120",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
+    },
     {
       "title" : "Armkrok",
       "challenge" : "Kroka arm med spelarna bredvid dig, du får inte släppa taget förrän det är din tur igen",
-      "number" : "121"
+      "number" : "121",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Hålla handen",
       "challenge" : "Håll spelaren till vänster i handen, du får inte släppa förrän det är din tur igen",
-      "number" : "122"
+      "number" : "122",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Charader-djur",
       "challenge" : "Gör en charad av ett djur. Om det är omöjligt för det andra att gissa vad du ska föreställa, måste du dricka",
-      "number" : "123"
+      "number" : "123",
+      "drinks" : 3,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Charader-byggnad",
       "challenge" : "Gör en charad av en byggnad. Om det är omöjligt för det andra att gissa vad du ska föreställa, måste du dricka",
-      "number" : "124"
+      "number" : "124",
+      "drinks" : 3,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Charader-yrke",
       "challenge" : "Göer en charad av ett yrek. Om det är omöjligt för de andra att gissa vad du ska föreställa, måste du dricka",
-      "number" : "125"
+      "number" : "125",
+      "drinks" : 3,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Stirra!",
-      "challenge" : "Stirra på någon i en hel runda",
-      "number" : "126"
+      "challenge" : "Stirra på någon tills 4 kort är dragna",
+      "number" : "126",
+      "drinks" : 3,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Räck upp handen!",
       "challenge" : "Den sista spelaren som räcker upp handen måste dricka",
-      "number" : "127"
+      "number" : "127",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Ärkefiende",
       "challenge" : "Du ska nu räkna ner till noll från tre. När du säger noll ska alla deltagare visa ett av två tecken upp i luften. Ett fredstecken eller en pistol. De med minst anhängare till sitt tecken måste dricka",
-      "number" : "128"
+      "number" : "128",
+      "drinks" : 3,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Puss",
       "challenge" : "Pussa spelaren till höger på kinden",
-      "number" : "129"
+      "number" : "129",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Frikort",
       "challenge" : "Du får lov att hoppa över ett uppdrag. Endast en gång",
-      "number" : "130"
-     },
+      "number" : "130",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
+    },
     {
       "title" : "Polaren",
       "challenge" : "Den senaste personen du skrev till måste dricka. Om han eller hon inte finns i rummet får du dricka",
-      "number" : "131"
+      "number" : "131",
+      "drinks" : 3,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Applådera",
-      "challenge" : "Du måste applådera varenda gång någon utför ett uppdrag",
-      "number" : "132"
+      "challenge" : "Du måste applådera varenda gång någon utför ett uppdrag. Glömmer du måste du dricka",
+      "number" : "132",
+      "drinks" : 4,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Peka inte",
-      "challenge" : "Du får inte lov att peka längre under spelets gång",
-      "number" : "133"
+      "challenge" : "Du får inte lov att peka längre under spelets gång. Gör du det måste du dricka",
+      "number" : "133",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Sssshhh!",
-      "challenge" : "Ingen får lov att prata under en runda. OBS! Man får lov att läsa uppdrag/kort",
-      "number" : "134"
+      "challenge" : "Ingen får lov att prata under en runda. OBS! Man får lov att läsa uppdrag/kort. Pratar man dricker man",
+      "number" : "134",
+      "drinks" : 2,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Tandlös",
-      "challenge" : "Under en hel runda får ingen lov att visa tänderna när dem skrattar",
-      "number" : "135"
+      "challenge" : "Under en hel runda får ingen lov att visa tänderna när dem skrattar. Gör man det dricker man",
+      "number" : "135",
+      "drinks" : 1,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Var social!",
       "challenge" : "Ingen får lov att använda sin telefon under en runda. Ifall någon gör det, får personen till höger om denne skicka ett meddelande till någon av personens kontakter",
-      "number" : "136"
+      "number" : "136",
+      "drinks" : 0,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Papegoja",
-      "challenge" : "Alla ska från och med nu upprepa det sista ordet i varje mening man säger... Säger",
-      "number" : "137"
+      "challenge" : "Alla ska från och med nu upprepa det sista ordet i varje mening man säger... Säger. Glömmer man får man dricka... Dricka",
+      "number" : "137",
+      "drinks" : 3,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "T-Rex",
-      "challenge" : "Sätt armbågarna nära kroppen och låtsas vara en T-Rex en runda",
-      "number" : "138"
+      "challenge" : "Sätt armbågarna nära kroppen och låtsas vara en T-Rex nästa 4 kort",
+      "number" : "138",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Fan",
       "challenge" : "Ingen får lov att svära. Om någon gör det blir straffet att skriva svordomen på sig med valfri penna",
-      "number" : "139"
+      "number" : "139",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "8, 7, 6... fan",
-      "challenge" : "Räkna baklänges från 10. Om du misslyckas eller hakar upp dig får du dricka",
-      "number" : "140"
-     },
+      "challenge" : "Räkna baklänges från 15 utan att säga 12, 7, 6 eller 2. Om du misslyckas eller hakar upp dig får du dricka",
+      "number" : "140",
+      "drinks" : 5,
+      "isPersonalChallenge" : true
+    },
     {
       "title" : "Tuff tuff tåget",
-      "challenge" : "Varje gång du skrattar måste du veva dina armar fram och tillbaka som ett lokomotiv. Uppdraget avslutas nästa gång det är din tur",
-      "number" : "141"
+      "challenge" : "Varje gång du skrattar måste du veva dina armar fram och tillbaka som ett lokomotiv. Uppdraget avslutas efter 5 kort",
+      "number" : "141",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Hank hill",
-      "challenge" : "Du måste från och med nu påbörja varje mening med: \"Det ska jag säga dig\". Uppdraget avslutas nästa gång det är din tur",
-      "number" : "142"
+      "challenge" : "Du måste från och med nu påbörja varje mening med: \"Det ska jag säga dig\". Uppdraget avslutas efter 5 kort",
+      "number" : "142",
+      "drinks" : 3,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Vilken sång",
       "challenge" : "Namnge vilken sång som spelas i rummet och om du inte vet får du dricka. Har ni ingen musik, sätt på något",
-      "number" : "143"
+      "number" : "143",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Vilken artist?",
       "challenge" : "Namnge artisten av sången som spelas i rummet, om du inte vet vilken artist det är får du dricka. Har ni ingen musik, sätt på något",
-      "number" : "144"
+      "number" : "144",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Hagelskott",
       "challenge" : "Du ska nu välja tre spelare som ska dricka, spelarna måste sitta bredvid varandra",
-      "number" : "145"
+      "number" : "145",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Ta en för laget",
       "challenge" : "Du har två alternativ. Ta en shot för laget eller välja att alla andra deltagare får dricka och du slipper",
-      "number" : "146"
+      "number" : "146",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Bytt är bytt",
       "challenge" : "Du ska nu byta plats med någon deltagare. Kanske vill du ha soffan, eller sätta dig bredvid din crush. Välj noga",
-      "number" : "147"
+      "number" : "147",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Smeknamn",
-      "challenge" : "Gen en av deltagarna ett smeknamn som alla måste kalla deltagaren för. Om man inte följer denna regel måste man dricka. Regeln är aktiv till dess att det är din tur igen",
-      "number" : "148"
+      "challenge" : "Ge en av deltagarna ett smeknamn som alla måste kalla deltagaren för. Om man inte följer denna regel måste man dricka. Regeln är aktiv i 5 kort till",
+      "number" : "148",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Regel",
-      "challenge" : "Välj en regel som gäller under spelets gång",
-      "number" : "149"
+      "challenge" : "Välj en regel som gäller under spelets gång. Bryter någon regeln måste hen dricka",
+      "number" : "149",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Bråkmakare",
-      "challenge" : "Du är fri från alla regler, om det finns några, i en runda framöver",
-      "number" : "150"
-     },
+      "challenge" : "Du är fri från alla regler, om det finns några, detta gäller 6 kort",
+      "number" : "150",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
+    },
     {
       "title" : "Du, du och du där!",
       "challenge" : "Du börjar med att dricka, sen måste varannan person (till vänster om dig) ta en klunk",
-      "number" : "151"
+      "number" : "151",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Copycat",
       "challenge" : "Gör samma uppdrag som den förra spelare gjorde",
-      "number" : "152"
+      "number" : "152",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Valmöjlighet",
-      "challenge" : "Dra två nya uppdrag och kom iåhg dem. Välj sedan vilket av uppdragen som du vill utföra",
-      "number" : "153"
+      "challenge" : "Nästa person som får ett uppdrag kan du välja att ge dubbelt om hen inte klarar det",
+      "number" : "153",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Skrattar bäst som skrattar sist",
-      "challenge" : "Gå vidare till nästa uppdrag och välj vem i rummet som ska utföra det",
-      "number" : "154"
+      "challenge" : "Nästa uppdrag du får kan du ge till någon annan",
+      "number" : "154",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Jag är bättre än er!",
       "challenge" : "För varje spelare som drack under förra uppdraget måste du dricka en gång. Maximalt fem gånger",
-      "number" : "155"
+      "number" : "155",
+      "drinks" : 5,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Immun",
-      "challenge" : "Du är immun under de två kommande rundorna",
-      "number" : "156"
+      "challenge" : "Du är immun under nästa 7 kort. Du behöver inte dricka",
+      "number" : "156",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Dubbelt upp",
-      "challenge" : "Gör två uppdrag i rad, forsätt sedan spelet som vanligt",
-      "number" : "157"
+      "challenge" : "Nästa uppdrag som sker måste man dricka dubbelt på",
+      "number" : "157",
+      "drinks" : 5,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Sätt ribban",
       "challenge" : "Drick en, två eller tre gånger. Efter det måste alla andra i spelet också dricka lika många gånger som du gjorde",
-      "number" : "158"
+      "number" : "158",
+      "drinks" : 3,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Uppdrag!",
       "challenge" : "Ge spelaren till vänster ett uppdrag. Om inte uppdraget genomförs måste hen dricka två gånger. Eller om uppdraget som du ger är för extremt enligt de andra spelarna måste du dricka",
-      "number" : "159"
+      "number" : "159",
+      "drinks" : 4,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Snapchat",
       "challenge" : "Ta en selfie eller en groupie och lägg upp den på din snapchat story",
-      "number" : "160"
-     },
+      "number" : "160",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
+    },
     {
       "title" : "Nästan...",
       "challenge" : "Du måste berätta vem i gruppen du tycker ser näst bäst ut. Den måste dricka",
-      "number" : "161"
+      "number" : "161",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Magiker",
       "challenge" : "Du måste utföra ett trolleritrick. Använd saker på bordet om du vill och gör det bästa trolleritricket som du kan. Om ingen skrattar måste du tyvärr dricka",
-      "number" : "162"
+      "number" : "162",
+      "drinks" : 4,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Singla slant",
       "challenge" : "Ta fram ett mynt och singla slant. Om det är en klave måste du dricka, om det är krona måste den till höger om dig dricka",
-      "number" : "163"
+      "number" : "163",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Hipster",
       "challenge" : "Alla måste peka på personen som är mest hipster i rummet. Hipstern måste sedan dricka",
-      "number" : "164"
+      "number" : "164",
+      "drinks" : 3,
+      "isPersonalChallenge" : false
     },
     {
       "title" : "Nman",
       "challenge" : "Välj en person som ska säga ditt namn baklänges. Om han eller hon inte klarar det måste den dricka",
-      "number" : "165"
+      "number" : "165",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Sten, sax, påse",
       "challenge" : "Spela sten, sax, påse med personen till höger om dig. Förloraren måste dricka",
-      "number" : "166"
+      "number" : "166",
+      "drinks" : 3,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Nicka",
       "challenge" : "LÄS FÖRST! Du kan när som helst nicka till en annan person, då måste denna person svara med att nicka tillbaka, annars måste den dricka",
-      "number" : "167"
+      "number" : "167",
+      "drinks" : 3,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Jag hatar den där färgen",
       "challenge" : "Säg en färg, alla som har ett klädesplagg med den färgen måste dricka",
-      "number" : "168"
+      "number" : "168",
+      "drinks" : 1,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Hej tomtegubbar!",
       "challenge" : "Hela gänget, sjung en snapsvisa och avsluta med en skål. Den som inte sjunger med får ett straff som bestäms av de andra",
-      "number" : "169"
+      "number" : "169",
+      "drinks" : 0,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Skåningen",
-      "challenge" : "Du måste nu under en runda prata som en skåning",
-      "number" : "170"
-     },
+      "challenge" : "Du måste under nästa 10 kort prata som en skåning",
+      "number" : "170",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
+    },
     {
       "title" : "Stockholmaren",
-      "challenge" : "Du måste nu under en runda prata som en stockholmare",
-      "number" : "171"
+      "challenge" : "Du måste under nästa 10 kort prata som en stockholmare",
+      "number" : "171",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Göteborgaren",
-      "challenge" : "Du måste nu under en runda prata som en göteborgare",
-      "number" : "172"
+      "challenge" : "Du måste under nästa 10 kort prata som en göteborgare",
+      "number" : "172",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Norrlänningen",
-      "challenge" : "Du måste nu under en runda prata som en norrlänning",
-      "number" : "173"
+      "challenge" : "Du måste under nästa 10 kort prata som en norrlänning",
+      "number" : "173",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     },
     {
       "title" : "Tony Irving",
-      "challenge" : "Du måste nu under en runda prata svenska med en engelsk accent",
-      "number" : "174"
+      "challenge" : "Du måste under nästa 10 kort prata svenska med en engelsk accent",
+      "number" : "174",
+      "drinks" : 2,
+      "isPersonalChallenge" : true
     }
   ]
 }

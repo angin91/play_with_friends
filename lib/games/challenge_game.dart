@@ -3,17 +3,16 @@ import 'dart:convert';
 import 'package:play_with_friends/models/challenge.dart';
 import 'package:play_with_friends/widgets/challenge_card.dart';
 import 'package:play_with_friends/widgets/custom_box.dart';
-import 'package:play_with_friends/widgets/custom_deck_card.dart';
-import 'package:styled_text/styled_text.dart';
 import 'package:swipeable_card/swipeable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import "dart:math";
 import 'package:play_with_friends/helper.dart';
-import 'package:wakelock/wakelock.dart';
 
 class ChallengeGame extends StatefulWidget {
-  ChallengeGame({Key key,}) : super(key: key);
+  ChallengeGame({Key key, this.players}) : super(key: key);
+
+  final List<String> players;
 
   @override
   _ChallengeGameState createState() => _ChallengeGameState();
@@ -26,10 +25,12 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
   List<ChallengeCard> cards = new List<ChallengeCard>();
   int currentCardIndex = 0;
   Future load;
+  List<String> players;
 
   @override
   void initState() {
     super.initState();
+    players = widget.players;
     helper = new Helper();
     load = setChallenges();
   }
@@ -42,7 +43,7 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
     challenges.forEach((challenge) {
       cards.add(
           ChallengeCard(
-              challenge: challenge
+              challenge: challenge, player: getRandomPlayer(),
           )
       );
     });
@@ -126,6 +127,8 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: CustomBox(
+              circular: 50,
+              height: 50,
               linearColor1: _color,
               linearColor2: _color,
               onTap: () {
@@ -140,6 +143,8 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: CustomBox(
+              circular: 50,
+              height: 50,
               linearColor1: _color,
               linearColor2: _color,
               onTap: () => cardController.triggerSwipeRight(),
@@ -149,6 +154,12 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
         ),
       ],
     );
+  }
+
+  getRandomPlayer(){
+    var _currentIndex = _random.nextInt(players.length);
+    String text = players[_currentIndex];
+    return text;
   }
 
   @override
