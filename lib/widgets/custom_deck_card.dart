@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:play_with_friends/models/DeckCard.dart';
+import 'package:play_with_friends/models/deck_card.dart';
 
 class CustomDeckCard extends StatelessWidget {
   CustomDeckCard({Key key,

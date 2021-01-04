@@ -77,12 +77,6 @@
         "artist" : "Queen",
         "lyric" : "Mama, just killed a man \n\nPut a gun against his head",
         "solution" : "Pulled my trigger \n\nnow he's dead"
-    },
-    {
-        "title" : "",
-        "artist" : "",
-        "lyric" : "",
-        "solution" : ""
     }
   ]
 }

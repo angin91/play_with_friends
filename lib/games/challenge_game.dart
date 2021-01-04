@@ -1,15 +1,15 @@
 import 'dart:convert';
 
-import 'package:play_with_friends/models/Challenge.dart';
-import 'package:play_with_friends/widgets/ChallengeCard.dart';
-import 'package:play_with_friends/widgets/CustomButton.dart';
-import 'package:play_with_friends/widgets/CustomDeckCard.dart';
+import 'package:play_with_friends/models/challenge.dart';
+import 'package:play_with_friends/widgets/challenge_card.dart';
+import 'package:play_with_friends/widgets/custom_box.dart';
+import 'package:play_with_friends/widgets/custom_deck_card.dart';
 import 'package:styled_text/styled_text.dart';
 import 'package:swipeable_card/swipeable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import "dart:math";
-import 'package:play_with_friends/Helper.dart';
+import 'package:play_with_friends/helper.dart';
 import 'package:wakelock/wakelock.dart';
 
 class ChallengeGame extends StatefulWidget {
@@ -22,7 +22,7 @@ class ChallengeGame extends StatefulWidget {
 class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserver {
   Helper helper;
   final _random = new Random();
-  Color _color = Colors.yellow;
+  Color _color = Colors.yellow[800];
   List<ChallengeCard> cards = new List<ChallengeCard>();
   int currentCardIndex = 0;
   Future load;
@@ -125,12 +125,13 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
           flex: 1,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: CustomButton(
-              color: Colors.yellow[800],
+            child: CustomBox(
+              linearColor1: _color,
+              linearColor2: _color,
               onTap: () {
                 if(currentCardIndex >= 1) setState(() => currentCardIndex--);
               },
-              text: "Back",
+              child: Center(child: Text("Back")),
             ),
           ),
         ),
@@ -138,10 +139,11 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
           flex: 2,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: CustomButton(
-              color: Colors.yellow[800],
+            child: CustomBox(
+              linearColor1: _color,
+              linearColor2: _color,
               onTap: () => cardController.triggerSwipeRight(),
-              text: "Next",
+              child: Center(child: Text("Next")),
             ),
           ),
         ),

@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:play_with_friends/Helper.dart';
-import 'package:play_with_friends/games/GuessWhoChooseCategory.dart';
-import 'package:play_with_friends/games/general/ChallengeGame.dart';
-import 'package:play_with_friends/games/general/RingOfFire.dart';
-import 'package:play_with_friends/games/general/AlphabetGame.dart';
-import 'package:play_with_friends/games/general/SingALong.dart';
-import 'package:play_with_friends/models/Game.dart';
-import 'package:play_with_friends/widgets/CustomBox.dart';
+import 'package:play_with_friends/helper.dart';
+import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/guesswho/guess_who_choose_category.dart';
+import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/challenge_game.dart';
+import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/ring_of_fire.dart';
+import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/alphabet_game.dart';
+import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/sing_a_long.dart';
+import 'package:play_with_friends/models/game.dart';
+import 'package:play_with_friends/widgets/custom_box.dart';
 
 class SelectGamePage extends StatefulWidget {
   SelectGamePage({Key key, this.title}) : super(key: key);

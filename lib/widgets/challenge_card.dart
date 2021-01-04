@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:play_with_friends/models/Challenge.dart';
+import 'package:play_with_friends/models/challenge.dart';
 
 class ChallengeCard extends StatelessWidget {
   ChallengeCard({Key key,

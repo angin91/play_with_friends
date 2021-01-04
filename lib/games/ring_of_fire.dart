@@ -1,13 +1,13 @@
 import 'dart:convert';
 
-import 'package:play_with_friends/models/DeckCard.dart';
+import 'package:play_with_friends/models/deck_card.dart';
 import 'package:play_with_friends/models/custom_icons.dart';
-import 'package:play_with_friends/widgets/CustomDeckCard.dart';
+import 'package:play_with_friends/widgets/custom_deck_card.dart';
 import 'package:swipeable_card/swipeable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import "dart:math";
-import 'package:play_with_friends/Helper.dart';
+import 'package:play_with_friends/helper.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 

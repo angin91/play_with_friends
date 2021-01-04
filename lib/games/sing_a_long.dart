@@ -3,12 +3,12 @@ import 'dart:math';
 import 'package:flutter/services.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:play_with_friends/models/Song.dart';
+import 'package:play_with_friends/models/song.dart';
 import 'package:play_with_friends/models/custom_icons.dart';
-import 'package:play_with_friends/widgets/CustomBox.dart';
+import 'package:play_with_friends/widgets/custom_box.dart';
 import 'package:styled_text/styled_text.dart';
 import 'package:wakelock/wakelock.dart';
-import 'package:play_with_friends/Helper.dart';
+import 'package:play_with_friends/helper.dart';
 
 class SingALong extends StatefulWidget {
   SingALong({Key key, @required this.song}) : super(key: key);

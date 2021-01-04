@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import "dart:math";
 import 'package:aeyrium_sensor/aeyrium_sensor.dart';
-import 'package:play_with_friends/widgets/CustomTimer.dart';
+import 'package:play_with_friends/widgets/custom_timer.dart';
 import 'package:wakelock/wakelock.dart';
 
 class GuessWho extends StatefulWidget {

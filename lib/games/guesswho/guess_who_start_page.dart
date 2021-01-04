@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:play_with_friends/games/general/GuessWho.dart';
+import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/guesswho/guess_who.dart';
 import 'package:play_with_friends/models/custom_icons.dart';
-import 'package:play_with_friends/widgets/CustomBox.dart';
+import 'package:play_with_friends/widgets/custom_box.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:play_with_friends/widgets/CustomSelectionBox.dart';
+import 'package:play_with_friends/widgets/custom_selection_box.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:styled_text/styled_text.dart';
 
-import '../Helper.dart';
+import '../../helper.dart';
 
 class GuessWhoStartPage extends StatefulWidget {
   GuessWhoStartPage({Key key, this.list}) : super(key: key);
