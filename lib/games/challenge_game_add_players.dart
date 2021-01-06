@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:play_with_friends/helper.dart';
+import 'package:play_with_friends/models/custom_icons.dart';
 import 'package:play_with_friends/widgets/custom_box.dart';
 import 'package:play_with_friends/widgets/base_alert_text_dialog.dart';
 import 'package:play_with_friends/games/challenge_game.dart';
+import 'package:styled_text/styled_text.dart';
 
 class ChallengeGameAddPlayers extends StatefulWidget {
   ChallengeGameAddPlayers({Key key,}) : super(key: key);
@@ -12,12 +15,14 @@ class ChallengeGameAddPlayers extends StatefulWidget {
 }
 
 class _ChallengeGameAddPlayersState extends State<ChallengeGameAddPlayers> with WidgetsBindingObserver {
+  Helper helper;
   List<String> _players = [];
-  Color _color = Colors.yellow;
+  Color _color = Colors.yellow[800];
   TextEditingController _controller = TextEditingController();
 
   @override
   void initState() {
+    helper = new Helper();
     super.initState();
   }
 
@@ -27,6 +32,15 @@ class _ChallengeGameAddPlayersState extends State<ChallengeGameAddPlayers> with 
       appBar: AppBar(
         title: Text("Challenge game"),
         elevation: 0,
+        actions: [
+          GestureDetector(
+            child: Icon(
+              CustomIcons.help_circled,
+              color: _color,
+            ),
+            onTap: () => getRule("resource/rules/challenge_game_rules_swe"),
+          ),
+        ],
       ),
       backgroundColor: const Color.fromRGBO(241, 233, 218, 1),
       body: Column(
@@ -96,10 +110,12 @@ class _ChallengeGameAddPlayersState extends State<ChallengeGameAddPlayers> with 
                         no: "Cancel",
                         noOnPressed: () => Navigator.pop(context),
                         yesOnPressed: () {
-                          setState(() {
-                            _players.add(_controller.text);
-                            _controller.clear();
-                          });
+                          if(_controller.text != ""){
+                            setState(() {
+                              _players.add(_controller.text);
+                              _controller.clear();
+                            });
+                          }
                           Navigator.pop(context);
                         },
                       ));
@@ -135,6 +151,56 @@ class _ChallengeGameAddPlayersState extends State<ChallengeGameAddPlayers> with 
         ],
       ),
     );
+  }
+
+  void getRule(url) async {
+    var text = await helper.getFileData(url);
+
+    showModalBottomSheet(context: context, builder: (context) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Container(
+          height: MediaQuery.of(context).copyWith().size.height * 0.90,
+          color: Colors.transparent,
+          child: new Container(
+              decoration: new BoxDecoration(
+                  color: Colors.white.withOpacity(0.9),
+                  borderRadius: new BorderRadius.only(
+                      topLeft: const Radius.circular(20.0),
+                      topRight: const Radius.circular(20.0))),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Row(
+                      children: [
+                        Spacer(),
+                        GestureDetector(
+                            onTap: () => Navigator.pop(context),
+                            child: Icon(Icons.close, color: _color, size: 35,)
+                        ),
+                      ],
+                    ),
+                  ),
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: StyledText(
+                        text: text,
+                        newLineAsBreaks: true,
+                        textAlign: TextAlign.center,
+                        styles: {
+                          "bold": TextStyle(fontWeight: FontWeight.bold),
+                          "header" : TextStyle(fontSize: 32)
+                        },
+                      ),
+                    ),
+                  ),
+                ],
+              )),
+        ),
+      );
+    }, isScrollControlled: true);
   }
 
   @override

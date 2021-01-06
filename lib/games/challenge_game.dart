@@ -1,8 +1,10 @@
 import 'dart:convert';
 
 import 'package:play_with_friends/models/challenge.dart';
+import 'package:play_with_friends/models/custom_icons.dart';
 import 'package:play_with_friends/widgets/challenge_card.dart';
 import 'package:play_with_friends/widgets/custom_box.dart';
+import 'package:styled_text/styled_text.dart';
 import 'package:swipeable_card/swipeable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -26,6 +28,7 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
   int currentCardIndex = 0;
   Future load;
   List<String> players;
+  List<String> doneChallenges = new List<String>();
 
   @override
   void initState() {
@@ -57,6 +60,15 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
       appBar: AppBar(
         title: Text("Challenge game"),
         elevation: 0,
+        actions: [
+          GestureDetector(
+            child: Icon(
+              CustomIcons.help_circled,
+              color: _color,
+            ),
+            onTap: () => getRule("resource/rules/challenge_game_rules_swe"),
+          ),
+        ],
       ),
       backgroundColor: const Color.fromRGBO(241, 233, 218, 1),
       body: SafeArea(
@@ -82,8 +94,8 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
                           child: cards[currentCardIndex + 1],
                         ),
                     ],
-                    onLeftSwipe: () => swipeLeft(),
-                    onRightSwipe: () => swipeRight(),
+                    onLeftSwipe: () => swipe(),
+                    onRightSwipe: () => swipe(),
                   )
                 else
                 // if the deck is complete, add a button to reset deck
@@ -106,16 +118,19 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
     );
   }
 
-  void swipeLeft() {
+  void swipe() {
+    Challenge challenge = cards[currentCardIndex].challenge;
     setState(() {
+      if(challenge.duration > 1 && challenge.duration + currentCardIndex <= cards.length && !doneChallenges.contains(challenge.number)){
+        cards.insert(currentCardIndex + challenge.duration, ChallengeCard(
+          challenge: Challenge(challenge.title, challenge.doneText ,challenge.number,  0, true, 1, ""),
+          player: cards[currentCardIndex].player,)
+        );
+        doneChallenges.add(challenge.number);
+      }
       currentCardIndex++;
     });
-  }
-
-  void swipeRight() {
-    setState(() {
-      currentCardIndex++;
-    });
+    print(cards.length);
   }
 
   Widget cardControllerRow(SwipeableWidgetController cardController) {
@@ -160,6 +175,56 @@ class _ChallengeGameState extends State<ChallengeGame> with WidgetsBindingObserv
     var _currentIndex = _random.nextInt(players.length);
     String text = players[_currentIndex];
     return text;
+  }
+
+  void getRule(url) async {
+    var text = await helper.getFileData(url);
+
+    showModalBottomSheet(context: context, builder: (context) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Container(
+          height: MediaQuery.of(context).copyWith().size.height * 0.90,
+          color: Colors.transparent,
+          child: new Container(
+              decoration: new BoxDecoration(
+                  color: Colors.white.withOpacity(0.9),
+                  borderRadius: new BorderRadius.only(
+                      topLeft: const Radius.circular(20.0),
+                      topRight: const Radius.circular(20.0))),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Row(
+                      children: [
+                        Spacer(),
+                        GestureDetector(
+                            onTap: () => Navigator.pop(context),
+                            child: Icon(Icons.close, color: _color, size: 35,)
+                        ),
+                      ],
+                    ),
+                  ),
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: StyledText(
+                        text: text,
+                        newLineAsBreaks: true,
+                        textAlign: TextAlign.center,
+                        styles: {
+                          "bold": TextStyle(fontWeight: FontWeight.bold),
+                          "header" : TextStyle(fontSize: 32)
+                        },
+                      ),
+                    ),
+                  ),
+                ],
+              )),
+        ),
+      );
+    }, isScrollControlled: true);
   }
 
   @override
