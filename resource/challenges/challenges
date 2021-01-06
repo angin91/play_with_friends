@@ -1565,6 +1565,240 @@
       "isPersonalChallenge" : true,
       "duration" : 10,
       "doneText" : "Du behöver inte prata med engelsk accent längre"
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Endast kunna svenska eller benmästra alla talade språk förutom svenska och engelska. Minst röster dricker",
+      "number" : "175",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Svälja en dosa lössnus eller röka upp 15 cigarettpaket på en dag (Ca 300 cigaretter). Minst röster dricker",
+      "number" : "176",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Vara tvungen att gå runt i simfötter eller vara tvungen att gå runt med cyklop och snorkel. Minst röster dricker",
+      "number" : "177",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Komma på din partner vara otrogen eller bli påkommen av din partner när du är otrogen. Minst röster dricker",
+      "number" : "178",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Vara 125 cm lång eller vara 225 cm lång. Minst röster dricker",
+      "number" : "179",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Fotografiskt minne eller vara resistent mot fysisk smärta. Minst röster dricker",
+      "number" : "180",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Raka din pappas ben eller klippa din mammas tånaglar. Minst röster dricker",
+      "number" : "181",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Aldrig mer kunna lyssna på musik eller aldrig mer få använda det engelska språket. Minst röster dricker",
+      "number" : "182",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Akne eller håravfall och tunnhårighet. Minst röster dricker",
+      "number" : "183",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Vara världens rikaste man/kvinna men bli förflyttad till 1400-talet eller ha normal ekonomi under 2000-talet. Minst röster dricker",
+      "number" : "184",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Kunna imitera vilken röst som helst eller kunna lösa vilken matematisk frågeställning som helst. Minst röster dricker",
+      "number" : "185",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Få reda på att din partner varit otrogen med 12st personer 1 gång eller varit otrogen med en person 12 gånger. Minst röster dricker",
+      "number" : "186",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Ha ett kraftigt unibrow eller inte ha några ögonbryn. Minst röster dricker",
+      "number" : "187",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Vara förälder till en mördare eller ha föräldrar som är mördare. Minst röster dricker",
+      "number" : "188",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Vara attraktiv och fattig eller vara oattraktiv och rik. Minst röster dricker",
+      "number" : "189",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Pest eller kolera",
+      "challenge" : "Tappa talförmågan eller bli av med synen. Minst röster dricker",
+      "number" : "190",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Skulle du hellre",
+      "challenge" : "Skulle du hellre vara osynlig eller kunna läsa tankar. Minst röster dricker",
+      "number" : "191",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Skulle du hellre",
+      "challenge" : "Skulle du hellre bli strandad på en ö ensam eller med någon du hatar. Minst röster dricker",
+      "number" : "192",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Skulle du hellre",
+      "challenge" : "Skulle du hellre glömma vem du är eller vilka alla andra är. Minst röster dricker",
+      "number" : "193",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Skulle du hellre",
+      "challenge" : "Skulle du hellre bara kunna viska eller bara kunna skrika. Minst röster dricker",
+      "number" : "194",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Skulle du hellre",
+      "challenge" : "Skulle du hellre åka på skidsemester eller surfsemester. Minst röster dricker",
+      "number" : "195",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Skulle du hellre",
+      "challenge" : "Skulle du hellre alltid förlora eller aldrig spela. Minst röster dricker",
+      "number" : "196",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Skulle du hellre",
+      "challenge" : "Skulle du hellre kunna stoppa tiden eller flyga. Minst röster dricker",
+      "number" : "197",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Skulle du hellre",
+      "challenge" : "Skulle du hellre ha en känguru eller koala som ditt husdjur. Minst röster dricker",
+      "number" : "198",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Skulle du hellre",
+      "challenge" : "Skulle du hellre veta allt eller ha allt. Minst röster dricker",
+      "number" : "199",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
+    },
+    {
+      "title" : "Skulle du hellre",
+      "challenge" : "Skulle du hellre vara en djuphavsdykare eller en astronaut. Minst röster dricker",
+      "number" : "200",
+      "drinks" : 2,
+      "isPersonalChallenge" : false,
+      "duration" : 1,
+      "doneText" : ""
     }
   ]
 }

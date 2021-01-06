@@ -4,7 +4,7 @@ import 'package:play_with_friends/helper.dart';
 import 'package:play_with_friends/models/custom_icons.dart';
 import 'package:play_with_friends/widgets/custom_box.dart';
 import 'package:play_with_friends/widgets/base_alert_text_dialog.dart';
-import 'package:play_with_friends/games/challenge_game.dart';
+import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/challenge_game/challenge_game.dart';
 import 'package:styled_text/styled_text.dart';
 
 class ChallengeGameAddPlayers extends StatefulWidget {
