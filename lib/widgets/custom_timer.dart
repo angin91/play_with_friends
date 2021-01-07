@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 class CustomTimer extends StatefulWidget {
-  CustomTimer({Key key, @required this.time, this.onExpire, this.style, this.rerunOnExpire = false}) : super(key: key);
+  CustomTimer({Key key, @required this.time, this.onExpire, this.style, this.rerunOnExpire = false, this.onTick}) : super(key: key);
 
   final int time;
   final Function onExpire;
   final TextStyle style;
   final bool rerunOnExpire;
+  final Function onTick;
 
   @override
   _CustomTimerState createState() => _CustomTimerState();
@@ -51,6 +52,9 @@ class _CustomTimerState extends State<CustomTimer> with WidgetsBindingObserver {
             }
           });
         } else {
+          if(widget.onTick != null){
+            widget.onTick();
+          }
           setState(() {
             _start--;
           });
@@ -69,7 +73,7 @@ class _CustomTimerState extends State<CustomTimer> with WidgetsBindingObserver {
   }
 
   Widget build(BuildContext context) {
-    return Text("$_start", style: widget.style,);
+    return Text((_start/60).floor().toString().padLeft(2, '0') + ":" + (_start%60).floor().toString().padLeft(2, '0'), style: widget.style,);
   }
 
   void pauseTimer() {

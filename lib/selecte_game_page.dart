@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:play_with_friends/helper.dart';
 import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/guesswho/guess_who_choose_category.dart';
-import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/challenge_game_add_players.dart';
+import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/challenge_game/challenge_game_add_players.dart';
 import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/ring_of_fire.dart';
 import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/alphabet_game.dart';
 import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/sing_a_long.dart';

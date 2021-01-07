@@ -23,10 +23,11 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
   int _currentIndex;
 
   String _text = "";
-  Color _color = Colors.blue;
+  Color _color = const Color.fromRGBO(217, 3, 104, 1);
   bool _waiting = true;
   int _points = 0;
   bool _started = false;
+  double _progress = 0;
 
   StreamSubscription<dynamic> _streamSubscriptions;
 
@@ -62,23 +63,65 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
     return GestureDetector(
         onDoubleTap: () => Navigator.pop(context),
         child: Scaffold(
+          backgroundColor: Colors.white,
           body: Container(
-            color: _color,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.bottomLeft,
+                end:
+                Alignment(0.9, 0.0), // 10% of the width, so there are ten blinds.
+                colors: [
+                  _color,
+                  _color.withOpacity(0.5)
+                ],
+              )
+            ),
             child: _started ? Column(
               children: [
-                CustomTimer(
-                  time: 60,
-                  onExpire: () => _finish(),
-                  style: TextStyle(fontSize: 40),),
+                Padding(
+                  padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
+                  child: LinearProgressIndicator(
+                    backgroundColor: const Color.fromRGBO(178, 1, 85, 1),
+                    value: _progress,
+                    valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),
+                  ),
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, left: 20),
+                      child: CustomTimer(
+                        time: 60,
+                        onExpire: () => _finish(),
+                        onTick: () {
+                          setState(() {
+                            _progress = _progress + (1/60);
+                          });
+                        },
+                        style: TextStyle(fontSize: 40, color: Colors.white),
+                      ),
+                    ),
+                    Spacer(),
+                  ],
+                ),
                 Expanded(
                   child: Center(
                     child: Text(
                       _text,
-                      style: TextStyle(fontSize: 60),
+                      style: TextStyle(fontSize: 60, color: Colors.white, fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center,
                     ),
                   ),
                 ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10, left: 20),
+                      child: Text(_points.toString() + " p", style: TextStyle(fontSize: 40, color: Colors.white)),
+                    ),
+                    Spacer()
+                  ],
+                )
               ],
             ) : Row(
               children: [
@@ -86,7 +129,7 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
                   child: Center(
                     child: CustomTimer(
                       time: 3,
-                      style: TextStyle(fontSize: 120),
+                      style: TextStyle(fontSize: 120, color: Colors.white),
                       onExpire: () => setState(() {
                         _started = true;
                         _waiting = false;
@@ -116,8 +159,8 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
   _passOrGood(event){
     if (event.pitch > 0.7 && !_waiting) {
       setState(() {
-        _text = "";
-        _color = Colors.green;
+        _text = "Correct";
+        _color = const Color.fromRGBO(33, 142, 51, 1);
         _waiting = true;
         _points++;
         gameList.removeAt(_currentIndex);
@@ -128,15 +171,15 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
             const Duration(seconds: 2),
                 () => setState(() {
               setRandomText();
-              _color = Colors.blue;
+              _color = const Color.fromRGBO(217, 3, 104, 1);
               _waiting = false;
             }));
       });
     }
     if (event.pitch < -1.0 && !_waiting) {
       setState(() {
-        _text = "";
-        _color = Colors.red;
+        _text = "Wrong";
+        _color = const Color.fromRGBO(224, 40, 0, 1);
         _waiting = true;
         _points--;
         gameList.removeAt(_currentIndex);
@@ -147,7 +190,7 @@ class _GuessWhoState extends State<GuessWho> with WidgetsBindingObserver {
             const Duration(seconds: 2),
                 () => setState(() {
               setRandomText();
-              _color = Colors.blue;
+              _color = const Color.fromRGBO(217, 3, 104, 1);
               _waiting = false;
             }));
       });
