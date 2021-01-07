@@ -22,12 +22,12 @@ class _RingOfFireState extends State<RingOfFire> with WidgetsBindingObserver {
   Helper helper;
   final _random = new Random();
   List<CustomDeckCard> cards = new List<CustomDeckCard>();
-  GlobalKey _keyTaskText = GlobalKey();
   int currentCardIndex = 0;
   Future load;
   int currentKings = 0;
   PanelController _controller = new PanelController();
   bool _isOpen = false;
+  IconData arrowIcon = Icons.keyboard_arrow_up;
 
   @override
   void initState() {
@@ -169,14 +169,14 @@ class _RingOfFireState extends State<RingOfFire> with WidgetsBindingObserver {
               Text(currentKings.toString() + "/4 ", style: TextStyle(fontSize: 20)),
               Padding(
                 padding: const EdgeInsets.only(right: 8),
-                child: Icon(CustomIcons.crown, color: Colors.black,),
+                child: Icon(CustomIcons.crown, color: Color.fromRGBO(46, 41, 78, 1),),
               ),
               SizedBox(width: 20,),
               Padding(
                 padding: const EdgeInsets.only(left: 8),
                 child: Text(currentCardIndex.toString() + "/52 ", style: TextStyle(fontSize: 20)),
               ),
-              Icon(CustomIcons.hearts_card, color: Colors.black,)
+              Icon(CustomIcons.hearts_card, color: Color.fromRGBO(46, 41, 78, 1),)
             ],
           ),
         ),
@@ -184,45 +184,44 @@ class _RingOfFireState extends State<RingOfFire> with WidgetsBindingObserver {
             GestureDetector(
               onTap: () => showHideSlider(),
               child: SlidingUpPanel(
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
                 controller: _controller,
                 onPanelOpened: () => setState(() => _isOpen = true),
                 onPanelClosed: () => setState(() => _isOpen = false),
-                color: Colors.brown[100],
+                color: Color.fromRGBO(46, 41, 78, 1),
                 panelBuilder: (scrollController) {
-                  return Opacity(
-                    opacity: 0.7,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                          child: Container(
-                            height: 60,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Center(child: Text(cards[currentCardIndex].deckCard.task, style: TextStyle(fontSize: 40),)),
-                                Spacer(),
-                                Center(child: Icon(CustomIcons.help,))
-                              ],
-                            ),
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                        child: Container(
+                          height: 60,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Spacer(),
+                              Center(child: Text(cards[currentCardIndex].deckCard.task, style: TextStyle(fontSize: 40, color: Colors.white, fontWeight: FontWeight.bold),)),
+                              Spacer(),
+                              Center(child: Icon(arrowIcon, color: Colors.white, size: 40,))
+                            ],
                           ),
                         ),
-                        SizedBox(height: 10,),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8),
-                          child: Center(
-                            child: AutoSizeText(
-                              cards[currentCardIndex].deckCard.description,
-                              maxLines: 6,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(fontSize: 20),
-                            ),
+                      ),
+                      SizedBox(height: 10,),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: Center(
+                          child: AutoSizeText(
+                            cards[currentCardIndex].deckCard.description,
+                            maxLines: 6,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 20, color: Colors.white),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   );
                 },
                 maxHeight: MediaQuery.of(context).size.height * 0.35,
@@ -237,9 +236,11 @@ class _RingOfFireState extends State<RingOfFire> with WidgetsBindingObserver {
   showHideSlider(){
     if(_isOpen){
       _controller.close();
+      arrowIcon = Icons.keyboard_arrow_up;
     }
     if(!_isOpen){
       _controller.open();
+      arrowIcon = Icons.keyboard_arrow_down;
     }
   }
 

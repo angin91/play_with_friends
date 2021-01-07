@@ -40,7 +40,7 @@ class _SelectGamePageState extends State<SelectGamePage> {
     games.add(Game("Sing-a-Long", SingALong(), [GameTag.teamGame], Colors.purple[800], Colors.purple[400]));
     games.add(Game("Alphabet game", AlphabetGame(), [GameTag.drinkingGame], Colors.grey[800], Colors.grey[400]));
     games.add(Game("Challenge game", ChallengeGameAddPlayers(), [GameTag.drinkingGame], Colors.yellow[900], Colors.yellow[700]));
-    games.add(Game("Ring of Fire", RingOfFire(), [GameTag.drinkingGame], Colors.blue[800], Colors.blue[400]));
+    games.add(Game("Ring of Fire", RingOfFire(), [GameTag.drinkingGame], Color.fromRGBO(46, 41, 78, 1), Color.fromRGBO(46, 41, 78, 0.5)));
   }
 
   @override
