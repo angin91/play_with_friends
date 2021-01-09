@@ -18,7 +18,21 @@ class CustomDeckCard extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
         boxShadow: [
-          BoxShadow(color: Colors.grey.withOpacity(0.2), offset: Offset(3, 3), blurRadius: 3)
+          BoxShadow(
+            color: Colors.black.withOpacity(0.03),
+            offset: Offset(0, 4.0), //(x,y)
+            blurRadius: 4.0,
+          ),
+          BoxShadow(
+            color: Colors.black.withOpacity(0.08),
+            offset: Offset(0, 2.0), //(x,y)
+            blurRadius: 4.0,
+          ),
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            offset: Offset(2.0, 8.0), //(x,y)
+            blurRadius: 12.0,
+          ),
         ]
       ),
       height: height,
