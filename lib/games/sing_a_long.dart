@@ -23,7 +23,7 @@ class _SingALongState extends State<SingALong> {
   List<Song> songs = new List();
   Song currentSong;
   Helper helper;
-  Color _color = Colors.purple;
+  Color _color = Color.fromRGBO(125, 128, 218, 1);
   final _random = new Random();
   Future load;
 
@@ -108,77 +108,80 @@ class _SingALongState extends State<SingALong> {
                           child: FlipCard(
                             front: CustomBox(
                               circular: 20,
-                              linearColor1: Colors.purple[800],
-                              linearColor2: Colors.purple[400],
+                              linearColor1: _color,
+                              linearColor2: _color.withOpacity(0.5),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.stretch,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Expanded(
-                                        flex: 2,
-                                        child: Text(
-                                          "Song",
-                                          style: TextStyle(
-                                            fontSize: 20,
+                                    Text(
+                                      "1",
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    Spacer(),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 8.0),
+                                      child: Text(
+                                        "\"" + currentSong.lyric + "...\"",
+                                        style: TextStyle(
+                                            fontSize: 30,
                                             color: Colors.white
-                                          ),
-                                          textAlign: TextAlign.center,
-                                        )),
-                                    Expanded(
-                                      flex: 3,
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 8.0),
-                                        child: Text(
-                                          currentSong.lyric,
-                                          style: TextStyle(
-                                              fontSize: 20,
-                                              color: Colors.white
-                                          ),
-                                          textAlign: TextAlign.center,
                                         ),
+                                        textAlign: TextAlign.center,
                                       ),
                                     ),
+                                    Spacer(),
                                   ],
                                 ),
                               ),
                             ),
                             back: CustomBox(
                               circular: 20,
-                              linearColor1: Colors.purple[800],
-                              linearColor2: Colors.purple[400],
+                              linearColor1: _color,
+                              linearColor2: _color.withOpacity(0.5),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                                  children: [
-                                    Expanded(
-                                        flex: 2,
-                                        child: Text(
-                                          "Solution",
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.all(Radius.circular(15))
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          "2",
                                           style: TextStyle(
                                               fontSize: 20,
-                                              color: Colors.white
-                                          ),
-                                          textAlign: TextAlign.center,
-                                        )),
-                                    Expanded(
-                                      flex: 3,
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 8.0),
-                                        child: Text(
-                                          currentSong.solution,
-                                          style: TextStyle(
-                                              fontSize: 20,
-                                              color: Colors.white
                                           ),
                                           textAlign: TextAlign.center,
                                         ),
-                                      ),
+                                        Spacer(),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 8.0),
+                                          child: Text(
+                                            "\"..." + currentSong.solution + "\"",
+                                            style: TextStyle(
+                                                fontSize: 30,
+                                            ),
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                        Spacer(),
+                                      ],
                                     ),
-                                  ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -191,8 +194,8 @@ class _SingALongState extends State<SingALong> {
                       child: CustomBox(
                         height: 50,
                         circular: 50,
-                        linearColor1: Colors.purple[800],
-                        linearColor2: Colors.purple[400],
+                        linearColor1: _color,
+                        linearColor2: _color.withOpacity(0.5),
                         onTap: () {
                           songs.remove(currentSong);
                           setRandomSong();

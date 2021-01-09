@@ -37,7 +37,7 @@ class _SelectGamePageState extends State<SelectGamePage> {
 
   _setGameList(){
     games.add(Game("Guess Who", GuessWhoChooseCategory(), [GameTag.teamGame], Colors.pink[700], Colors.pink[300]));
-    games.add(Game("Sing-a-Long", SingALong(), [GameTag.teamGame], Colors.purple[800], Colors.purple[400]));
+    games.add(Game("Sing-a-Long", SingALong(), [GameTag.teamGame], Color.fromRGBO(125, 128, 218, 1), Color.fromRGBO(125, 128, 218, 0.5)));
     games.add(Game("Alphabet game", AlphabetGame(), [GameTag.drinkingGame], Colors.grey[800], Colors.grey[400]));
     games.add(Game("Challenge game", ChallengeGameAddPlayers(), [GameTag.drinkingGame], Colors.yellow[900], Colors.yellow[700]));
     games.add(Game("Ring of Fire", RingOfFire(), [GameTag.drinkingGame], Color.fromRGBO(46, 41, 78, 1), Color.fromRGBO(46, 41, 78, 0.5)));
