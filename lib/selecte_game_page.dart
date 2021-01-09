@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:play_with_friends/games/codenames.dart';
 import 'package:play_with_friends/helper.dart';
 import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/guesswho/guess_who_choose_category.dart';
 import 'file:///C:/Users/angin/workspace/play_with_friends/lib/games/challenge_game/challenge_game_add_players.dart';
@@ -41,6 +42,7 @@ class _SelectGamePageState extends State<SelectGamePage> {
     games.add(Game("Alphabet game", AlphabetGame(), [GameTag.drinkingGame], Colors.grey[800], Colors.grey[400]));
     games.add(Game("Challenge game", ChallengeGameAddPlayers(), [GameTag.drinkingGame], Colors.yellow[900], Colors.yellow[700]));
     games.add(Game("Ring of Fire", RingOfFire(), [GameTag.drinkingGame], Color.fromRGBO(46, 41, 78, 1), Color.fromRGBO(46, 41, 78, 0.5)));
+    games.add(Game("Codenames", Codenames(), [GameTag.teamGame], Colors.teal, Colors.teal.withOpacity(0.5)));
   }
 
   @override

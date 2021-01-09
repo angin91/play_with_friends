@@ -67,6 +67,7 @@ flutter:
 
   assets:
     - resource/categories/
+    - resource/codenames/
     - resource/rules/
     - resource/songs/
     - resource/challenges/

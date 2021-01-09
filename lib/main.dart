@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'selecte_game_page.dart';
+import 'package:play_with_friends/games/codenames.dart';
+import 'package:play_with_friends/games/sing_a_long.dart';
+import 'package:play_with_friends/games/guesswho/guess_who_choose_category.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,6 +21,8 @@ class MyApp extends StatelessWidget {
         canvasColor: Colors.transparent,
       ),
      home: SelectGamePage(title: 'Play With Friends'),
+     // home: Codenames(),
+     // home: GuessWhoChooseCategory(),
     );
   }
 

@@ -1,0 +1,15 @@
+<header><bold>Codenames - Regler</bold></header>
+
+<bold>Förberedelser</bold>
+Spelarna delar in sig i två lag och väljer ut varsin ledare som är mästerspionen inom laget. Mästerspionerna sätter sig vid ena sidan av bordet och samtliga lagkamrater sitter på motsatt sidan.
+
+<bold>Spelets gång</bold>
+När det blir endera lagens tur skall deras mästerspion ge ett ord som ledtråd. Ordet skall syfta på en eller flera av de kodorden som finns under (Show solution) knappen. Där kan de två mästerspionerna identifiera vilka av kodorden som är röd- respektive blåmarkerade och man vill att ens lagkamrater skall identifiera motståndarlagets uppmärkta ord.
+
+Efter att ha sagt en ledtråd får mästerspionen också säga en siffra, som då anger hur många kodord som ledtråden syftar på. Detta är även det maximala antalet gissningar som lagkamraterna får under sin tur, plus ytterligare en gissning på en tidigare ledtråd som man har misslyckats med. När laget är ense om vilket kodord man vill gissa på så vidrör man kortet som vänds och avslöjar vad det är under.
+
+Om brickan tillhör motståndarlagets färg så får laget fortsätta att gissa på nästa (eventuella) kodord. Om brickan tillhör det egna lagets färg eller är vitt så har man gissat fel och turen går vidare till motståndarlaget. Råkar man gissa på det kodord som är förknippat med lönnmördaren (grå färg) så förlorar laget omedelbart.
+
+När endera lag har lyckats identifiera alla de kodord som tillhör motståndarlaget har man vunnit.
+
+Röda laget börjar och måste identifiera 1 kodord extra.
